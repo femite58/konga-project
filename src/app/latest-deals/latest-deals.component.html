@@ -1,0 +1,31 @@
+<div class="container-fluid ldealProdCont">
+	<div class="ldealTitleTexts">
+		<h4>Latest Deals</h4>
+		<a routerLink="/">See all Items</a>
+	</div>
+	<div class="prodItemCont">
+		<div *ngFor="let prod of ldealProdList" class="prodItem">
+			<a routerLink="/">
+				<div class="row">
+					<div class="col-4">
+						<div class="imageContainer">
+							<img [src]="prod.img" class="w-100">
+						</div>
+					</div>
+					<div class="col-8">
+						<div class="prodInfoCont">
+							<h3>{{prod.name}}</h3>
+							<div class="priceCont">
+								<span class="prices">
+									<span class="sellPrice">{{prod.sellPrice | currency:"N":"symbol":"1.0"}}</span>
+									<span *ngIf="prod.genPrice > 0" class="genPrice"> {{prod.genPrice | currency:"N":"symbol":"1.0"}}</span>
+								</span>
+								<span *ngIf="prod.genPrice > 0" class="savings">You saved {{(prod.genPrice - prod.sellPrice) | currency:"N":"symbol":"1.0"}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<div class="totalDetailItem">
+    <div class="totalDetailHead">
+        <div class="detailHeadItem">
+            <div class="subHeadItem">
+                <span>Tracking ID:</span>
+                <b>F332287679001</b>
+            </div>
+            <div class="subHeadItem">
+                <span>Shipping Fee:</span>
+                <span><span>N</span>{{450 |number}}</span>
+            </div>
+        </div>
+        <div class="detailHeadItem">
+            <div class="subHeadItem">
+                <span>Sold By:</span>
+                <b class="soldBy">Konga</b>
+            </div>
+            <div class="subHeadItem">
+                <span>Total:</span>
+                <span><span>N</span>{{92350 |number}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="trackInfo">
+        <span><i class="fa fa-map-marker"></i> Track Order</span>
+        <span [class.shipped]="test.status == 'shipped'" [class.processing]="test.status == 'processing'">{{test.status == 'shipped' ? 'Shipped' : 'Processing'}}</span>
+    </div>
+    <div class="orderProductInfo">
+        <div class="imgCont">
+            <img class="w-100" src="assets/images/recomprod/1.jpg">
+        </div>
+        <div class="prodInfoText">
+            <div class="prodName">Notebook 15-RB006NIA AMD A4 Dual Core - 4GB RAM, 500GB HDD - FreeDos</div>
+            <div class="price"><span>N</span>{{91900 |number}}</div>
+            <div>Quantity: 1</div>
+        </div>
+    </div>
+</div>

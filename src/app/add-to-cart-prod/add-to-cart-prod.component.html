@@ -1,0 +1,62 @@
+<div class="sponsProdCont">
+    <div class="addToCartProdCont">
+        <div *ngFor="let prod of prodDisplayList" class="prodItem">
+            <a routerLink="/prod-details">
+                <div class="flexContainer">
+                    <div class="imageContainer">
+                        <div class="percOffCont">
+                            <span *ngIf="prod.genPrice > 0" class="percOff">
+								{{(100 - ((prod.sellPrice/prod.genPrice) * 100)) | number: "1.1-1"}}% OFF
+							</span>
+                            <span class="favBtn"><i class="fa fa-heart"></i></span>
+                        </div>
+                        <img [src]="prod.img" class="h-100">
+                    </div>
+                    <div class="prodInfoCont">
+                        <h3>{{prod.name}}</h3>
+                        <div class="priceCont">
+                            <span class="prices">
+								<span class="sellPrice">{{prod.sellPrice | currency:"N":"symbol":"1.0"}}</span>
+                            <span *ngIf="prod.genPrice > 0" class="genPrice"> {{prod.genPrice | currency:"N":"symbol":"1.0"}}</span>
+                            </span>
+                            <div class="soldBy">
+                                <span class="soldByText">Sold by</span>
+                                <span class="seller">{{prod.seller}}</span>
+                            </div>
+                            <div class="pickUp">
+                                <span>Pickup Available</span>
+                                <span *ngIf="prod.shippingInfo" class="shippingInfo">| {{prod.shippingInfo}}</span>
+                            </div>
+                            <div class="ratings">
+                                <span [class.zeroStar]="prod.stars == 0" [class.oneStar]="prod.stars == 1" [class.twoStar]="prod.stars == 2" [class.threeStar]="prod.stars == 3" [class.fourStar]="prod.stars == 4" [class.fiveStar]="prod.stars == 5">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</span>
+                                <span class="review">
+									{{prod.reviews > 0 ? (prod.reviews+' Review'+(prod.reviews > 1 ? 's' : '')) : 'No Reviews yet'}}
+								</span>
+                                <div *ngIf="prod.deliveryInfo.length > 0" class="deliveryInfo">
+                                    <span class="deliveryText">Next day delivery at:</span>
+                                    <span *ngFor="let loc of prod.deliveryInfo; let i=index" class="deliveryLocation">{{i != (prod.deliveryInfo.length - 1) ? (loc+',') : loc}}</span>
+                                </div>
+                                <div class="btnContainer">
+                                    <a routerLink="/prod-details">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="pageNavigationCont">
+        <button (click)="currentPage == 1 ? (currentPage = currentPage) : scrollTop(1, -1)" [disabled]="currentPage == 1"><i class="fa fa-chevron-left"></i> Previous</button>
+        <div class="pageNumberCont">
+            <span *ngFor="let num of navPageList; let i = index" [class.activePage]="(i+1) == currentPage" [style.display]="displayCheck(i) ? 'block' : 'none'" (click)="contentCheck(i) ? scrollTop(i) : currentPage = currentPage">{{contentCheck(i) ? num : '...'}}</span>
+        </div>
+        <button (click)="currentPage == navPageList[navPageList.length - 1] ? (currentPage = currentPage) : scrollTop(1, 1)" [disabled]="currentPage == navPageList[navPageList.length - 1]">Next <i class="fa fa-chevron-right"></i></button>
+    </div>
+</div>

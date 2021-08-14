@@ -1,0 +1,9 @@
+<div #gridCont class="gridCont">
+	<div *ngFor="let image of topRightImg; let i=index" class="flexItem">
+		<a routerLink="/">
+			<div class="imageContainer">
+				<img [src]="image" class="w-100 h-100">
+			</div>
+		</a>
+	</div>
+</div>

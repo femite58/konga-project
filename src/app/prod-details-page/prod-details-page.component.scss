@@ -1,0 +1,15 @@
+.bodySection {
+    padding: 15px 20px;
+}
+
+@media (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .bodySection {
+        padding: 10px;
+    }
+}

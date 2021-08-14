@@ -1,0 +1,73 @@
+@import '../signup/signup.component.scss';
+.heading {
+    padding: 18px;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.notification {
+    background: #f8f8f8;
+    font-size: 13px;
+    text-align: center;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+}
+
+.emailAddress label {
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    width: 100%;
+}
+
+input {
+    height: 60px;
+    line-height: 58px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 20px;
+}
+
+input:focus {
+    border: 1px solid #000;
+    outline: none;
+}
+
+.termsCondition a {
+    text-decoration: none;
+    color: $secondary;
+}
+
+.login {
+    padding: 15px 0;
+}
+
+.login h3 {
+    font-size: 15px;
+    margin: 0;
+}
+
+.login div {
+    color: #1c1d1f;
+    font-size: 13px;
+}
+
+.login div:nth-child(2) {
+    margin: 10px 0 0 !important;
+}
+
+.login div a {
+    color: $secondary;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    font-weight: normal;
+    line-height: unset;
+}
+
+.login div a:hover {
+    background: none;
+}

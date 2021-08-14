@@ -1,0 +1,49 @@
+<!-- <div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar> -->
+<div class="container-fluid loginParent">
+    <img class="logo" src="assets/images/logo-alternate.png">
+    <div class="centerCont">
+        <div class="padding">
+            <h2 class="heading">Signup</h2>
+            <form>
+                <div class="emailAddress">
+                    <label>First Name</label>
+                    <input class="emailInput" type="text" placeholder="Enter First Name">
+                </div>
+                <div class="emailAddress">
+                    <label>Last Name</label>
+                    <input class="emailInput" type="text" placeholder="Enter Last Name">
+                </div>
+                <div class="emailAddress">
+                    <label>Email Address</label>
+                    <input class="emailInput" type="text" placeholder="Enter Email Address">
+                </div>
+                <div class="emailAddress">
+                    <label>Phone Number</label>
+                    <input class="emailInput" type="text" placeholder="Enter Phone Number">
+                </div>
+                <div class="passwordSection">
+                    <div class="passwdText">
+                        <label>Password</label>
+                    </div>
+                    <div class="inputCont">
+                        <input #p type="password" placeholder="Enter Password">
+                        <span class="togglePass" (click)="p.type === 'text' ? p.type = 'password' : p.type = 'text'">
+                            {{p.type === 'text'? 'Hide':'Show'}}
+                        </span>
+                    </div>
+                </div>
+                <button>Create an Account</button>
+            </form>
+            <div class="termsCondition text-center">
+                By signing up you accept our <a routerLink="/">terms and conditions</a><br> and <a routerLink="/">privacy policy</a>
+            </div>
+        </div>
+        <div class="login text-center">
+            <p>Already have an Account?</p>
+            <a routerLink="/login">Login</a>
+        </div>
+    </div>
+</div>

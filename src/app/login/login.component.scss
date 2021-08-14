@@ -1,0 +1,212 @@
+@import '../theme/colors.scss';
+.loginParent {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+.heading {
+    font-weight: bold;
+}
+
+.centerCont {
+    width: 40%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 20px #dddddd;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 13px;
+    color: #000;
+    margin: 0;
+}
+
+.emailAddress,
+.passwordSection {
+    padding-bottom: 20px;
+}
+
+input {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+input::placeholder {
+    font-size: 13px;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.passwdText {
+    display: flex;
+    justify-content: space-between;
+}
+
+.passwdText a {
+    color: $secondary;
+    text-decoration: underline;
+    font-size: 13px;
+}
+
+.inputCont {
+    position: relative;
+}
+
+.togglePass {
+    font-size: 12px;
+    color: #9b9b9b;
+    display: inline-block;
+    padding: 0 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+form button {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    display: block;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    background: $tertiary;
+    border: none;
+}
+
+.orSection {
+    position: relative;
+    // height: 27px;
+    width: 100%;
+    display: flex;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.hline,
+.orCircle {
+    position: absolute;
+    display: flex;
+    height: 30px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.hline div {
+    border-top: 1px solid #dddddd;
+    width: 100%;
+}
+
+.orSection span {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    color: #9b9b9b;
+    border-radius: 100%;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    line-height: 27px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+.socialSignup {
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialSignup img {
+    height: 15px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.socialSignup a {
+    padding: 10px 0;
+    // height: 40px;
+    text-align: center;
+    display: block;
+    width: 48.5%;
+    border-radius: 4px;
+    border: 1px solid grey;
+}
+
+.socialSignup a span {
+    font-size: 12px;
+    color: #b4b4b4;
+}
+
+.socialSignup .google {
+    border-color: rgb(0, 60, 255);
+}
+
+.socialSignup .google span {
+    color: rgb(0, 60, 255);
+}
+
+.signup {
+    margin-top: 30px;
+    padding: 17px;
+}
+
+.signup a {
+    font-weight: bold;
+    font-size: 15px;
+    color: $secondary;
+}
+
+@media (max-width: 850px) {
+    .centerCont {
+        width: 60%;
+    }
+}
+
+@media (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 630px) {
+    .centerCont {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    .centerCont {
+        width: 80%;
+    }
+}
+
+@media (max-width: 420px) {
+    .centerCont {
+        width: 92%;
+    }
+    .socialSignup {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    .socialSignup a {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}

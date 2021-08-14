@@ -1,0 +1,27 @@
+@import '../variation/variation.component.scss';
+
+.selectionText i {
+	font-size: 16px;
+	color: #e3e3e3;
+	margin-right: 2px;
+}
+
+.oneStar i:first-child {
+	color: orange;
+}
+
+.twoStar i:first-child, .twoStar i:nth-child(2) {
+	color: orange;
+}
+
+.threeStar i:first-child, .threeStar i:nth-child(2), .threeStar i:nth-child(3) {
+	color: orange;
+}
+
+.fourStar i:first-child, .fourStar i:nth-child(2), .fourStar i:nth-child(3), .fourStar i:nth-child(4) {
+	color: orange;
+}
+
+.fiveStar i {
+	color: orange;
+}

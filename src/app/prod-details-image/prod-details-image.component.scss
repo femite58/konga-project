@@ -1,0 +1,481 @@
+@import '../theme/colors.scss';
+@import '../prod-desc-overview/prod-desc-overview.component.scss';
+.parentCont {
+    background: #fff;
+    padding: 24px 24px 40px;
+}
+
+.imageContainer {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100%;
+}
+
+.prodInfoItem {
+    border-bottom: 1px solid #f5f5f5;
+    padding: 20px 0;
+}
+
+.prodCodeBrand {
+    font-size: 14px;
+    color: #9b9b9b;
+}
+
+.prodCodeBrand b {
+    color: #000;
+}
+
+.prodCodeRating,
+.rating {
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.rating {
+    font-size: 16px;
+    margin: 0 10px 9px 0;
+}
+
+.ratingText {
+    font-size: 12px;
+    margin-left: 4px;
+    color: #99bb99;
+}
+
+.prodCode,
+.prodBrand {
+    margin-bottom: 8px;
+}
+
+.prodName {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+b.price {
+    font-size: 26px;
+}
+
+.savings {
+    margin-left: 10px;
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #b9b9b9;
+}
+
+.priceCont .saveText {
+    margin-left: 16px;
+    color: $tertiary;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.quantityShowNumCont,
+.quantityCont,
+.quantInput,
+.buyButtonCont,
+.saveLater,
+.pickupCont,
+.priceCont {
+    display: flex;
+    align-items: center;
+    // align-content: center;
+}
+
+.quantText {
+    font-size: 12px;
+    margin-right: 20px;
+}
+
+.increSection {
+    width: 100.63px;
+}
+
+.increSection .error {
+    color: #d00218;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+}
+
+.quantInput {
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    overflow: hidden;
+    width: 100%;
+}
+
+.quantInput button {
+    border: none;
+    // padding: 0 10px;
+    font-weight: bold;
+    font-size: 16px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 29px;
+    height: 28px;
+    // border: 1px solid #dbdbdb;
+}
+
+.quantInput button:focus {
+    border: none;
+    outline: none;
+}
+
+.quantVal {
+    text-align: center;
+    padding: 0 15px;
+    display: block;
+    line-height: 28px;
+    border-left: 1px solid #dbdbdb;
+    border-right: 1px solid #dbdbdb;
+}
+
+.quantInput button .minus {
+    border-top: 1.5px solid rgb(151, 151, 151);
+    display: block;
+    width: 8px;
+}
+
+.quantInput button .plus,
+.plus2 {
+    position: relative;
+    width: 17px !important;
+    height: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.plus2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px !important;
+    height: 20px !important;
+}
+
+.vert,
+.horz {
+    border-top: 1.5px solid rgb(151, 151, 151);
+    width: 10px;
+}
+
+.vert {
+    transform: rotate(90deg);
+}
+
+.showNumCont {
+    font-size: 13px;
+    margin-left: 30px;
+}
+
+.showNumCont .callUs {
+    color: #9b9b9b;
+    line-height: 14px;
+}
+
+.showNumCont .toggleNum {
+    color: #4a4a4a;
+    line-height: 14px;
+}
+
+.toggleNum b {
+    cursor: pointer;
+}
+
+.quantInput:hover {
+    box-shadow: 0px 5px 10px #e2e2e2;
+}
+
+.buyButtonCont {
+    justify-content: space-between;
+}
+
+.buyButtonCont button {
+    background: $tertiary;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+    display: block;
+    width: 75%;
+    text-align: center;
+    border: none;
+    padding: 11px;
+    margin-right: 30px;
+}
+
+.saveLater .favCont {
+    display: block;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    background: #9b9b9b;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.saveLater .favCont:hover {
+    background: orange;
+}
+
+.saveLater .saveText {
+    font-size: 12px;
+    color: #9b9b9b;
+    margin-left: 8px;
+    white-space: nowrap;
+    // color:#ed017f
+}
+
+.pickupCont {
+    margin-bottom: 16px;
+}
+
+.row .col-md-6:nth-child(3) .pickupCont,
+.row .col-md-6:last-child .pickupCont {
+    margin-bottom: 0;
+}
+
+.pickupCont .pickupText {
+    color: #1c1d1f;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pickupCont .svgCont {
+    margin-right: 20px;
+    width: 35px;
+}
+
+.deliveryLocationCont {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.deliveryLocationCont .deliveryInfo {
+    flex: 1;
+    color: #1c1d1f;
+    font-size: 13px;
+}
+
+.deliveryLocationCont .deliveryLocation {
+    flex: 2;
+    background: #f8f8f8;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-left: 10px;
+}
+
+.deliveryLocation span {
+    border-radius: 50px;
+    font-size: 13px;
+    padding: 8px 15px;
+    background: #ffdb67;
+    margin-left: 10px;
+}
+
+.shareCont {
+    padding-top: 14px;
+}
+
+.shareCont h5 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.socialIcons a {
+    display: inline-block;
+    background: #ccc;
+    color: #fff;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 100%;
+    margin-right: 13px;
+}
+
+.topFixedInfoCont {
+    padding: 25px 30px 15px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 20;
+    background: #fff;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    left: 0px;
+    transition: 0.5s ease;
+    box-shadow: 0 5px 5px #adadad49;
+    // transform: translateY(-100%);
+}
+
+.prodImageName {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    // flex: 4;
+    margin-right: 10px;
+}
+
+.imageCont {
+    width: 50px;
+    margin-right: 8px;
+}
+
+.prodInfo h5 {
+    font-size: 11px;
+    margin: 0;
+}
+
+.prodInfo h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.topFixedInfoCont .priceCont {
+    flex-direction: column;
+    // flex: 1;
+}
+
+.topFixedInfoCont .priceCont .price,
+.topFixedInfoCont .priceCont .savings {
+    display: block;
+    text-align: right;
+    width: 100%;
+    margin: 0;
+}
+
+.topFixedInfoCont .quantityCont {
+    flex-direction: column;
+    // flex: 1;
+    align-items: flex-start;
+    margin: 0 15px;
+}
+
+.topFixedInfoCont .quantityCont .quantText {
+    margin-bottom: 5px;
+    display: block;
+    width: 100%;
+    margin-right: 0;
+}
+
+.topFixedInfoCont .buyNow {
+    background: $tertiary;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 4px;
+    display: block;
+    width: 250px;
+    // flex: 1;
+    text-align: center;
+    border: none;
+    padding: 11px;
+    // margin-right: 30px;
+}
+
+.soldByCont {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #fff;
+}
+
+.soldByCont .firstLetter {
+    display: block;
+    line-height: 40px;
+    width: 40px;
+    background: $secondary;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.soldByText span {
+    font-size: 18px;
+}
+
+.soldByText .seller {
+    font-size: 18px;
+    color: #644ba0;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.soldByText .learnMore {
+    text-decoration: underline;
+    margin-right: 8px;
+    color: $secondary;
+    font-weight: 400;
+}
+
+.reviewCont .stars i {
+    color: orange;
+    margin-right: 2px;
+}
+
+.reviewCont .reviewText {
+    margin-left: 10px;
+    color: #7e859b;
+}
+
+@media (max-width: 862px) {
+    .prodCodeRating {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 767px) {
+    .topFixedInfoCont {
+        display: none;
+    }
+    .pickupCont {
+        margin-bottom: 16px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .quantityShowNumCont {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .showNumCont {
+        margin: 0;
+        margin-top: 10px;
+    }
+    .buyButtonCont {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .buyButtonCont button {
+        margin: 0;
+        width: 100%;
+    }
+    .saveLater {
+        margin-top: 10px;
+    }
+    .prodName {
+        font-size: 25px;
+    }
+}

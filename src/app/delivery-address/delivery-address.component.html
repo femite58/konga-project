@@ -1,0 +1,96 @@
+<div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar>
+<app-prod-details-bread-crumb [activeLink]="'My Delivery Addresses'" [previousLink]="'My Account'" [pageTitle]="'Delivery Addresses'"></app-prod-details-bread-crumb>
+<div class="bodyParent">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-nav [activeLink]="'delivery'"></app-side-nav>
+        </div>
+        <div class="col-md-9">
+            <div class="addressContent">
+                <div class="heading">
+                    <button (click)="newAddress = !newAddress">{{newAddress ? 'Cancel' : 'New Address'}}</button>
+                </div>
+                <div class="bodySection">
+                    <div *ngIf="!newAddress" class="addressItemCont">
+                        <div class="addressItem">
+                            <div class="itemHead">
+                                <span>Address {{1}}</span>
+                                <div class="action">
+                                    <button>Edit</button>
+                                    <button>Delete</button>
+                                </div>
+                            </div>
+                            <div class="itemBody">
+                                <div class="detailItem">
+                                    <div class="svgCont">
+                                        <svg height="14px" version="1.1" viewBox="0 0 20 20" width="14px" xmlns="http://www.w3.org/2000/svg" aria-label="user" class="" name="user"><g fill="none" fill-rule="evenodd" id="Desktop" stroke="none" stroke-width="1"><g fill="#9B9B9B" fill-rule="nonzero" id="Checkout---Existing-Customer->-Signed-In---All-Selection->-Pickup" transform="translate(-62.000000, -598.000000)"><path d="M72,598 C66.4850484,598 62,602.485047 62,608 C62,613.514956 66.4850493,618 72,618 C77.5149513,618 82,613.514956 82,608 C82,602.485047 77.5149524,598 72,598 Z M72,599.333333 C76.7943653,599.333333 80.6666667,603.205633 80.6666667,608 C80.6666667,610.404238 79.6935676,612.577393 78.1180556,614.145833 C77.0168267,611.012258 74.7008667,608.888889 72,608.888889 C69.2991333,608.888889 66.9831733,611.012258 65.8819444,614.145833 C64.3064322,612.577393 63.3333333,610.404238 63.3333333,608 C63.3333333,603.205633 67.2056356,599.333333 72,599.333333 Z M72,601.333333 C70.1669464,601.333333 68.6666667,602.833616 68.6666667,604.666667 C68.6666667,606.499718 70.1669464,608 72,608 C73.8330538,608 75.3333333,606.499718 75.3333333,604.666667 C75.3333333,602.833616 73.8330538,601.333333 72,601.333333 Z M72,602.666667 C73.1124662,602.666667 74,603.554202 74,604.666667 C74,605.779131 73.1124662,606.666667 72,606.666667 C70.887534,606.666667 70,605.779131 70,604.666667 C70,603.554202 70.887534,602.666667 72,602.666667 Z M72,610.222222 C74.1084567,610.222222 76.1219247,612.039503 77.0138889,615.076389 C75.5990551,616.080571 73.871064,616.666667 72,616.666667 C70.1289364,616.666667 68.4009449,616.080571 66.9861111,615.076389 C67.8780753,612.039503 69.8915433,610.222222 72,610.222222 Z" id="Shape"></path></g></g></svg>
+                                    </div>
+                                    <span>Neeta Jade</span>
+                                </div>
+                                <div class="detailItem">
+                                    <div class="svgCont">
+                                        <svg height="14" width="14" xmlns="http://www.w3.org/2000/svg" aria-label="home-location" class="" name="home-location"><path d="M12.152 4.824l2.731 2.602c.11.106.147.27.092.415a.377.377 0 0 1-.344.244H12.89v5.519a.38.38 0 0 1-.377.382h-2.98a.38.38 0 0 1-.378-.382.38.38 0 0 1 .377-.383h2.605V7.702a.38.38 0 0 1 .376-.382h1.162l-2.156-2.064a.385.385 0 0 1-.12-.279V2.514h-.855v.933c0 .153-.09.292-.228.353a.373.373 0 0 1-.408-.074L8 1.906 2.326 7.32h1.153a.38.38 0 0 1 .376.382.38.38 0 0 1-.376.383h-2.11a.377.377 0 0 1-.344-.244.387.387 0 0 1 .092-.415l6.625-6.323a.373.373 0 0 1 .516 0l1.531 1.46v-.431a.38.38 0 0 1 .377-.383h1.602a.374.374 0 0 1 .271.11c.072.071.113.17.113.273v2.692zM5.718 8.223c1.646.001 2.98 1.356 2.98 3.028 0 1.88-1.452 3.603-2.306 4.469a.95.95 0 0 1-1.347 0c-.853-.857-2.288-2.566-2.306-4.437-.005-1.604 1.211-2.94 2.786-3.06h.193zm.15 6.944h-.005c.63-.624 2.081-2.255 2.081-3.916-.002-1.245-.995-2.255-2.221-2.259h-.151c-1.171.098-2.073 1.09-2.075 2.283.016 1.656 1.46 3.28 2.081 3.892.082.08.21.08.29 0zm.831-4.916c.54.55.54 1.44 0 1.99a1.371 1.371 0 0 1-1.511.306 1.408 1.408 0 0 1-.856-1.301c0-.57.338-1.083.856-1.3a1.371 1.371 0 0 1 1.511.305zm-.533 1.459a.649.649 0 0 0 0-.918.628.628 0 0 0-.895.004.651.651 0 0 0 0 .909.628.628 0 0 0 .895.005z" fill="#9B9B9B" fill-rule="nonzero" opacity=".6" stroke="#9B9B9B" stroke-width=".3"></path></svg>
+                                    </div>
+                                    <span>12, Okeho Street, Agege/Ijaye, Lagos</span>
+                                </div>
+                                <div class="detailItem">
+                                    <div class="svgCont">
+                                        <svg height="14" width="14" xmlns="http://www.w3.org/2000/svg" aria-label="phone" class="" name="phone"><path d="M1.628 0A1.633 1.633 0 0 0 .002 1.576a12.423 12.423 0 0 0 .36 3.178c1.421 5.85 6.671 10.19 12.931 10.238a.534.534 0 0 0 .102.008.534.534 0 0 0 .223-.046c.772-.114 1.382-.758 1.382-1.56v-3.215c0-.881-.725-1.607-1.605-1.607h-2.14c-.37 0-.417.166-.481.24a1.658 1.658 0 0 0-.157.217c-.095.15-.192.327-.293.508-.127.229-.206.335-.307.487C7.71 8.968 5.903 7.24 4.971 4.974c.096-.045.167-.08.286-.134.216-.097.446-.2.655-.33a1.45 1.45 0 0 0 .306-.239.737.737 0 0 0 .224-.52V1.606C6.442.727 5.717 0 4.837 0h-3.21zm6.951.084a.535.535 0 0 0-.06 1.066 6.428 6.428 0 0 1 5.337 5.366.536.536 0 1 0 1.057-.163A7.5 7.5 0 0 0 8.686.093a.534.534 0 0 0-.107-.009zm-6.951.987h3.21c.305 0 .534.23.534.536v1.976c-.011.008-.008.007-.021.015-.12.074-.324.17-.532.264-.207.093-.417.182-.602.286-.093.052-.18.097-.29.216a.6.6 0 0 0-.16.302.66.66 0 0 0 .048.366l-.016-.028c1.043 2.883 3.334 5.025 6.182 6.206.186.077.4.043.553-.088.36-.309.521-.698.724-1.063.093-.167.175-.311.24-.416h1.897c.306 0 .535.23.535.536v3.214c0 .306-.23.536-.535.536-5.813 0-10.68-4.018-11.994-9.429a11.363 11.363 0 0 1-.328-2.896.56.56 0 0 1 .555-.533zm6.97 2.185a.535.535 0 0 0-.202 1.034 4.302 4.302 0 0 1 2.333 2.353.535.535 0 1 0 .991-.403A5.367 5.367 0 0 0 8.805 3.3a.534.534 0 0 0-.207-.044zm2.982 6.26c-.001 0-.003.034-.045.066l.045-.065z" fill="#9B9B9B" fill-rule="nonzero" opacity=".6"></path></svg>
+                                    </div>
+                                    <span>123456789</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="newAddress">
+                        <form>
+                            <div class="inputParent">
+                                <div class="inputSection">
+                                    <label>First Name</label>
+                                    <input type="text" placeholder="Enter First Name">
+                                </div>
+                                <div class="inputSection">
+                                    <label>Last Name</label>
+                                    <input type="text" placeholder="Enter Last Name">
+                                </div>
+                                <div class="inputSection">
+                                    <label>Mobile Number</label>
+                                    <input type="text" placeholder="Mobile Number">
+                                </div>
+                                <div class="inputSection">
+                                    <label>Street Address</label>
+                                    <input type="text" placeholder="Enter delivery address">
+                                </div>
+                                <div class="inputSection">
+                                    <label>Directions (Optional)</label>
+                                    <input type="text" placeholder="Directions">
+                                </div>
+                                <div class="inputSection">
+                                    <label>City</label>
+                                    <input type="text" placeholder="City">
+                                </div>
+                                <div class="inputSection">
+                                    <label>State</label>
+                                    <select>
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                                <div class="inputSection">
+                                    <label>LGA</label>
+                                    <select>
+                                        <option>Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button>Save Address</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

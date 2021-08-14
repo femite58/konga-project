@@ -1,0 +1,70 @@
+<div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar>
+<app-prod-details-bread-crumb [activeLink]="'Saved Items'" [previousLink]="''" [pageTitle]="'Saved Items'"></app-prod-details-bread-crumb>
+<div *ngIf="savedItems.length > 0" class="bodySection">
+    <div class="savedItemCont">
+        <a *ngFor="let prod of prodDisplayList" routerLink="/" class="savedItemParent">
+            <div class="savedItem">
+                <div class="flexContainer">
+                    <div class="imageContainer">
+                        <div class="percOffCont">
+                            <span *ngIf="prod.genPrice > 0" class="percOff">
+                            {{(100 - ((prod.sellPrice/prod.genPrice) * 100)) | number: "1.1-1"}}% OFF
+                        </span>
+                            <span class="favBtn"><i class="fa fa-heart"></i></span>
+                        </div>
+                        <img [src]="prod.img" class="h-100">
+                    </div>
+                    <div class="prodInfoCont">
+                        <h3>{{prod.name}}</h3>
+                        <div class="priceCont">
+                            <span class="prices">
+                            <span class="sellPrice">{{prod.sellPrice | currency:"N":"symbol":"1.0"}}</span>
+                            <span *ngIf="prod.genPrice > 0" class="genPrice"> {{prod.genPrice | currency:"N":"symbol":"1.0"}}</span>
+                            </span>
+                            <div class="soldBy">
+                                <span class="soldByText">Sold by</span>
+                                <span class="seller">{{prod.seller}}</span>
+                            </div>
+                            <div class="pickUp">
+                                <span>Pickup Available</span>
+                                <span *ngIf="prod.shippingInfo" class="shippingInfo">| {{prod.shippingInfo}}</span>
+                            </div>
+                            <div class="ratings">
+                                <span [class.zeroStar]="prod.stars == 0" [class.oneStar]="prod.stars == 1" [class.twoStar]="prod.stars == 2" [class.threeStar]="prod.stars == 3" [class.fourStar]="prod.stars == 4" [class.fiveStar]="prod.stars == 5">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </span>
+                                <span class="review">
+                                {{prod.reviews > 0 ? (prod.reviews+' Review'+(prod.reviews > 1 ? 's' : '')) : 'No Reviews yet'}}
+                            </span>
+                                <div *ngIf="prod.deliveryInfo.length > 0" class="deliveryInfo">
+                                    <span class="deliveryText">Next day delivery at:</span>
+                                    <span *ngFor="let loc of prod.deliveryInfo; let i=index" class="deliveryLocation">{{i != (prod.deliveryInfo.length - 1) ? (loc+',') : loc}}</span>
+                                </div>
+                                <div class="btnContainer">
+                                    <a routerLink="/">Add To Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+<div *ngIf="savedItems.length < 1" class="emptyCart">
+    <div class="centeredEmpty">
+        <div class="svgEmpt">
+            <svg height="62" width="72" aria-label="love-spangled" class="" name="love-spangled"><g fill="#ed017f" fill-rule="evenodd" stroke="#ed017f" stroke-width="2"><path d="M12 45.66l2.83-2.83M12 7l2.83 2.83m49.83 35.83l-2.83-2.83M64.66 7l-2.83 2.83M36.98 61v-4m0-52V1M1.85 28h4m61 0h4" opacity=".28" stroke-linecap="round" stroke-linejoin="round"></path><path d="M53.77 16.25a11 11 0 0 0-7.83-3.23c-2.96 0-5.74 1.15-7.83 3.24L37 17.35l-1.1-1.1A11.06 11.06 0 0 0 28.05 13a11.02 11.02 0 0 0-7.82 3.22 10.89 10.89 0 0 0-3.24 7.8c0 2.95 1.16 5.7 3.26 7.8l15.92 15.84c.22.22.52.34.8.34.3 0 .6-.11.81-.33l15.96-15.82a10.93 10.93 0 0 0 3.25-7.8 10.88 10.88 0 0 0-3.23-7.8z"></path></g></svg>
+        </div>
+        <b>You haven’t saved any item yet.</b>
+        <p>Click on the link below to start shopping</p>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,36 @@
+<div class="sideNav desktop">
+    <div class="navSection">
+        <div class="iconCont">
+            <i class="fa fa-user-circle-o"></i>
+        </div>
+        <div class="navText">
+            <h3>My Profile</h3>
+            <div class="navLinks">
+                <a routerLink="/user/profile" [class.activeLink]="activeLink === 'account'">Personal Information</a>
+                <a routerLink="/user/delivery" [class.activeLink]="activeLink === 'delivery'">Delivery Address</a>
+            </div>
+        </div>
+    </div>
+    <div class="navSection">
+        <div class="iconCont">
+            <i class="fa fa-shopping-bag"></i>
+        </div>
+        <div class="navText">
+            <h3>My Orders</h3>
+            <div class="navLinks">
+                <a routerLink="/user/orders" [class.activeLink]="activeLink === 'orders'">Orders</a>
+            </div>
+        </div>
+    </div>
+    <div class="navSection">
+        <div class="iconCont">
+            <i class="fa fa-heart-o"></i>
+        </div>
+        <div class="navText">
+            <h3>Saved Items</h3>
+            <div class="navLinks">
+                <a routerLink="/favorites" [class.activeLink]="activeLink === 'wallet'">Saved Items</a>
+            </div>
+        </div>
+    </div>
+</div>

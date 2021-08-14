@@ -1,0 +1,49 @@
+@import '../variation/variation.component.scss';
+@import '../theme/colors.scss';
+.priceRange {
+    padding: 10px;
+}
+
+.priceRangeHeading {
+    padding: 20px 0 10px;
+}
+
+.inputCont {
+    border: 1px solid grey;
+    display: inline-block;
+    margin-right: 10px;
+    width: 25%;
+    background: #fff;
+}
+
+.inputCont span {
+    padding-left: 8px;
+}
+
+input[type="text"] {
+    border: none;
+    width: 55%;
+    height: 30px;
+}
+
+input[type="text"]:focus {
+    border: none;
+    outline: none;
+}
+
+button {
+    border: 1px solid $primary;
+    padding: 8px;
+    font-size: 14px;
+    font-family: Arial;
+    color: $primary;
+    font-weight: bold;
+    line-height: 15px;
+    width: 50px;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: $primary;
+    color: #fff;
+}

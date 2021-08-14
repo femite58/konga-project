@@ -1,0 +1,553 @@
+@import '../theme/colors.scss';
+.container-fluid {
+    background: $secondary;
+    height: 41px;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: #fff;
+    padding: 12px 29px;
+    font-size: 13px;
+}
+
+.megaMenuLink,
+.allCat {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 13px;
+    height: 41px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.mobile {
+    display: none;
+}
+
+.allCat {
+    /*display: block;*/
+    font-weight: bold;
+    /*line-height: 39px;*/
+    transition: 0.2s ease;
+}
+
+.allCat a {
+    padding: 0;
+}
+
+a:hover {
+    color: #000;
+    background: #fff;
+}
+
+.allCat:hover a {
+    color: #000;
+    background: transparent !important;
+}
+
+.megaMenu {
+    display: inline-block;
+}
+
+.megaMenu .megaMenuDropped,
+.allCatMegaMenu .allCatDropped {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 62%;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 15px 15px rgba(140, 140, 140, 0.5);
+    overflow-y: auto;
+    z-index: 20;
+    /*margin-top: 10px;*/
+}
+
+.allCatMegaMenu:hover .allCat a,
+.allCatMegaMenu:hover .allCat {
+    background: #fff;
+    color: #000;
+}
+
+.allCatMegaMenu .allCatDropped {
+    display: none;
+    padding: 0px
+}
+
+.allCatMegaMenu:hover .allCatDropped {
+    display: block;
+}
+
+.megaMenuDropped::-webkit-scrollbar {
+    width: 5px;
+}
+
+.megaMenuDropped::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.megaMenuDropped::-webkit-scrollbar-thumb {
+    background: #bcb8b8;
+    border-radius: 50px;
+}
+
+.megaMenuDropped::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    border-radius: 50px;
+}
+
+.megaMenuLink {
+    line-height: 17px;
+}
+
+.flexContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.allCatDropped .forOverflow {
+    height: 100%;
+    width: 20%;
+    overflow-y: auto;
+    background: #ede9e9;
+}
+
+.allCatDropped .menuCont {
+    width: 100%;
+    height: fit-content;
+}
+
+.subMenuDropped {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    width: 80%;
+    padding: 25px;
+}
+
+.subMenuDropped::-webkit-scrollbar {
+    width: 5px;
+}
+
+.subMenuDropped::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.subMenuDropped::-webkit-scrollbar-thumb {
+    background: #bcb8b8;
+    border-radius: 50px;
+}
+
+.subMenuDropped::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    border-radius: 50px;
+}
+
+.forOverflow::-webkit-scrollbar {
+    width: 5px;
+}
+
+.forOverflow::-webkit-scrollbar-track {
+    background: #fff;
+    position: absolute;
+    right: 0;
+}
+
+.forOverflow::-webkit-scrollbar-thumb {
+    background: #bcb8b8;
+    border-radius: 50px;
+}
+
+.forOverflow::-webkit-scrollbar-thumb:hover {
+    background: #888;
+    border-radius: 50px;
+}
+
+.menuCont .allCatMenuLinks {
+    display: block;
+    color: #000;
+    text-align: left;
+    height: fit-content;
+    line-height: 26px;
+}
+
+.menuCont .allCatMenuLinks:hover {
+    color: $primary;
+    background: #fff;
+}
+
+.active {
+    color: $primary !important;
+    background: #fff;
+}
+
+.flexInnerCont {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.forOverflow .menuCont:hover .subMenuDropped {
+    display: block;
+}
+
+.allCatFlexCont .subMenuDropped {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.imageContainer {
+    width: 20%;
+    padding: unset !important;
+    margin: 0 0 0 10px !important;
+}
+
+.flexInnerCont .flexItem {
+    width: 33%;
+    margin-bottom: 10px;
+}
+
+.flexItem a {
+    display: block;
+    color: #000;
+    padding: 5px;
+    height: fit-content;
+    line-height: 15px;
+    text-align: left;
+}
+
+.flexItem a:hover {
+    color: $primary;
+}
+
+a h6 {
+    margin-bottom: 0;
+}
+
+.megaMenu:hover .megaMenuDropped {
+    display: block;
+}
+
+.megaMenu:hover .megaMenuLink {
+    background: #fff;
+    color: #000;
+}
+
+.mobileParent {
+    width: 100%;
+    padding: 0 10px;
+    line-height: 60px;
+    background: #fff;
+}
+
+.mobileParent .imageContainer {
+    width: 90px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.mobileParent .menu span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mobileParent .cartCont i {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10px;
+    color: grey;
+}
+
+.searchCont {
+    width: 100%;
+    height: 40px;
+}
+
+.searchCont input {
+    height: 40px;
+    background: #d9d9d9;
+}
+
+.searchCont input::placeholder {
+    font-size: 13px;
+}
+
+.searchCont .input-group-text {
+    background: $fourthColor !important;
+    color: $primary;
+    font-size: 14px !important;
+    border: none;
+    border-radius: 0 3px 4px 0;
+    padding: 6px 20px;
+}
+
+.categoriesIcoCont {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #f5f5f5;
+}
+
+.categoriesIcoCont .colFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.categoriesIcoCont a {
+    padding: 0;
+}
+
+.colFlex span {
+    font-size: 12px !important;
+    color: #50545b;
+    font-weight: normal !important;
+    line-height: 26px !important;
+}
+
+.colFlex i {
+    font-size: 25px;
+    color: #50545b;
+}
+
+.toggleDrawer {
+    cursor: pointer;
+}
+
+.toggleDrawer .fa-times {
+    font-size: 26px;
+}
+
+
+/*Side Drawer styles */
+
+.sideDrawer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    overflow: auto;
+    background: #fff;
+    z-index: 100;
+    transition: 0.6s ease;
+}
+
+.sideDrawer a {
+    line-height: 26px;
+    color: #50545b;
+}
+
+.sideDrawer .loginContainer {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginContainer a {
+    width: 48%;
+    text-align: center;
+    color: $primary;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid $primary;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.sideDrawer .fourGridCont {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #e6e6e6;
+}
+
+.fourGridCont a {
+    display: block;
+    width: 50% !important;
+    border-bottom: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    padding: 0;
+}
+
+.gridItem {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 10px;
+}
+
+.gridItem span {
+    display: block;
+    font-weight: normal !important;
+    line-height: 20px;
+}
+
+.gridItem i {
+    font-size: 21px;
+    width: 22px;
+}
+
+.gridItem .infoCont {
+    margin-left: 10px;
+}
+
+.gridItem .infoCont span:first-child {
+    font-size: 13px;
+}
+
+.gridItem .infoCont span:last-child {
+    font-size: 10px;
+}
+
+.categoriesTitleCont {
+    padding: 0px;
+    border-top: 4px solid #e6e6e6;
+}
+
+.categoriesTitleCont h6 {
+    padding: 13px 15px;
+    margin: 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.categoriesTitleCont .indicator {
+    width: 100%;
+    background: #0c0c0c;
+    color: #fff;
+    padding: 13px 15px;
+    line-height: 25px;
+    display: flex;
+    cursor: pointer;
+}
+
+.indicator i {
+    font-size: 27px;
+    margin-right: 10px;
+}
+
+.indicator span {
+    display: block;
+    width: 90%;
+    text-align: center;
+}
+
+.indicator span a {
+    color: #fff;
+    font-size: 17px;
+}
+
+.indicator span a:hover {
+    background: transparent;
+}
+
+.linkItemCont {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 13px 15px;
+    border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+.linkItemCont a {
+    padding: 0;
+    line-height: 25px;
+}
+
+.linkItemCont span {
+    line-height: 22px;
+    font-size: 27px !important;
+}
+
+.contactUs {
+    border-top: 4px solid #e6e6e6;
+    padding: 13px 15px;
+    display: block;
+}
+
+.accountSettings {
+    padding: 10px 15px;
+    display: flex;
+    line-height: unset;
+    height: unset;
+}
+
+.accountSettings>span {
+    background: $secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 25px !important;
+    font-weight: 500;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.accountSettings>span span {
+    font-size: 25px !important;
+}
+
+.accountSettings b {
+    font-size: 14px !important;
+}
+
+.accountSettings div {
+    height: fit-content !important;
+    line-height: 23px !important;
+}
+
+.userInfo div:nth-child(2) {
+    font-size: 12px;
+}
+
+.userInfo a {
+    font-size: 12px;
+    font-weight: 500;
+    color: $secondary;
+    padding: 0;
+    padding-top: 10px;
+}
+
+@media (max-width: 1340px) {
+    .container-fluid {
+        height: 65px !important;
+    }
+    .megaMenuLink,
+    .allCat {
+        height: 65px;
+    }
+    .allCat {
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 771px) {
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+}

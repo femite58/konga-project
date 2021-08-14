@@ -1,0 +1,27 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Rating</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="rateVarContainer" class="variationItemsCont" [style.height.px]="opened ? totalCollapseH : '0'">
+        <div *ngFor="let rvar of rateVarList;" class="variationItems">
+            <div class="selection">
+                <input type="radio">
+                <span class="selectionText">
+					<span 
+						[class.oneStar]="rvar==1"
+						[class.twoStar]="rvar==2"
+						[class.threeStar]="rvar==3"
+						[class.fourStar]="rvar==4" >
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<span class="ml-2">& Up</span>
+                </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

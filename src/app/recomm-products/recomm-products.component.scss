@@ -1,0 +1,142 @@
+@import '../theme/colors.scss';
+.recommendProdCont {
+    padding: 0 20px;
+}
+
+.recommendTitleTexts {
+    width: 100%;
+    padding: 0 15px;
+    background: #fff;
+    line-height: 50px;
+    border-bottom: 2px solid #f8f8f8;
+    border-radius: 5px 5px 0 0;
+}
+
+.recommendTitleTexts h4 {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.recommendTitleTexts a {
+    color: $secondary;
+    font-size: 13px;
+    margin-left: 70px;
+    font-weight: bold;
+}
+
+.recommendTitleTexts a:hover {
+    text-decoration: underline;
+}
+
+.prodItemCont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    background: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    border-radius: 0 0 5px 5px;
+}
+
+.prodItem {
+    width: 32.29%/*422.8px*/
+    ;
+    /*height: 145px;*/
+    padding: 15px;
+    transition: 0.3s ease;
+    margin: 10px 0 0 0.8%;
+    border: 2px solid #f8f8f8;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #f8f8f8;
+}
+
+.prodItem:hover {
+    box-shadow: 0 5px 10px #ccc;
+}
+
+.imageContainer {
+    width: 100%;
+}
+
+.prodInfoCont {
+    width: 100%;
+    height: 109.59px;
+    position: relative;
+}
+
+.prodInfoCont h3 {
+    font-size: 15px;
+    width: 100%;
+    margin: 5px 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #1C1D1F;
+    text-overflow: ellipsis;
+}
+
+.priceCont {
+    width: 100%;
+}
+
+.prices,
+.savings {
+    display: block;
+}
+
+.prices .sellPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1C1D1F;
+}
+
+.prices .genPrice {
+    font-size: 14px;
+    margin-left: 5px;
+    text-decoration: line-through;
+    color: #1C1D1F;
+}
+
+.savings {
+    font-size: 12px;
+    color: $tertiary;
+    margin: 2px 0;
+}
+
+.reviews {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.reviews i {
+    font-size: 16px;
+    color: orange;
+    margin-right: 2px;
+}
+
+.reviews span {
+    color: #9b9b9b;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+@media (max-width: 1000px) {
+    .prodItemCont {
+        flex-wrap: nowrap;
+    }
+    .prodItemCont::-webkit-scrollbar {
+        height: 4px;
+    }
+    .prodItemCont::-webkit-scrollbar-track {
+        background: #fff;
+    }
+    .prodItemCont::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 50px;
+    }
+    .prodItem {
+        width: /*32.29%*/
+        422.8px;
+    }
+}

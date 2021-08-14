@@ -1,0 +1,14 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>RAM Size</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="ramVarContainer" class="variationItemsCont" [style.height.px]="opened ? totalCollapseH : '0'">
+        <div *ngFor="let svar of ramSizeList" class="variationItems">
+            <div class="selection">
+                <input type="checkbox"><span class="selectionText">{{svar.size}}</span>
+            </div>
+            <span class="variationItemCount">{{svar.count | currency: " ":"symbol":"1.0"}}</span>
+        </div>
+    </div>
+</div>

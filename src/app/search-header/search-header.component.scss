@@ -1,0 +1,183 @@
+@import '../theme/colors.scss';
+.container-fluid {
+    padding: 0 0.29%;
+    background: $primary;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.container-fluid .logoContainer {
+    display: flex;
+    width: 127.5px;
+    margin-right: 20px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    // line-height: 58px;
+}
+
+a {
+    padding: 15px;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: 13px;
+    text-align: center;
+    height: 100%;
+    white-space: wrap;
+    transition: 0.3s;
+}
+
+a:hover {
+    text-decoration: none;
+    color: $primary;
+    background: #fff;
+}
+
+.container-fluid .logoContainer:hover {
+    color: unset;
+    background: unset;
+}
+
+.dropDown {
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+}
+
+.dropped {
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 100%;
+    box-shadow: 0 4px 10px rbga(250, 250, 250, 0.8);
+    animation-name: slidedown;
+    animation-duration: 0.6s;
+    z-index: 30;
+}
+
+@keyframes slidedown {
+    from {
+        margin-top: -10px;
+    }
+    to {
+        margin-top: 0px;
+    }
+}
+
+.dropped a,
+.dropped span:first-child {
+    display: flex;
+    padding: 0.75rem 1.25rem;
+    width: 200px;
+    color: grey;
+    line-height: 15px;
+    text-align: left;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dropped span:first-child {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dropped i {
+    font-size: 20px;
+    margin-right: 7px;
+    width: 20px;
+    display: inline-block;
+}
+
+.dropped a:hover,
+.dropped span:first-child:hover {
+    background: #f5f5f5;
+    color: $primary;
+}
+
+.logout {
+    background: rgb(255, 244, 246);
+}
+
+.dropDown:hover .dropped {
+    display: block;
+}
+
+.dropDown:hover .dropParentLink {
+    background: #fff;
+    color: $primary;
+}
+
+.container-fluid .searchInput {
+    display: inline-block;
+    padding: 0 20px;
+    width: 43.19%;
+}
+
+.input-group-append,
+.input-group-text {
+    background: $fourthColor !important;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    border-radius: 0 3px 4px 0;
+}
+
+.input-group-text {
+    padding: 6px 15px;
+}
+
+.form-control {
+    border: none;
+    padding: 2px 12px;
+    height: 35px !important;
+    line-height: 50px !important;
+}
+
+.form-control::placeholder {
+    font-size: 13px;
+    font-weight: 500;
+    color: grey;
+}
+
+.loginParent {
+    display: inline-flex;
+    height: 60px;
+    /*line-height: 58px;*/
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginParent .cart {
+    background: $tertiary;
+    line-height: 10px;
+    padding: 15px 20px;
+    border-radius: 3px;
+    height: 40px;
+    transition: 0.3s ease-in-out;
+    margin-left: calc(364.08px - 354.54px);
+}
+
+.cart span {
+    background: #fff;
+    color: black;
+    padding: 3px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.loginParent .cart:hover {
+    background: #2d9e6d;
+    color: #fff;
+}
+
+i.fa.fa-angle-down {
+    margin-left: 4px;
+}

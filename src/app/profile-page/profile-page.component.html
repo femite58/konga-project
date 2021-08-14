@@ -1,0 +1,16 @@
+<div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar>
+<app-prod-details-bread-crumb [activeLink]="pageInfo.linkTitle" [previousLink]="'My Account'" [pageTitle]="pageInfo.pageTitle"></app-prod-details-bread-crumb>
+<div class="bodyParent">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-nav [activeLink]="'account'"></app-side-nav>
+        </div>
+        <div class="col-md-9">
+            <app-account-info></app-account-info>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

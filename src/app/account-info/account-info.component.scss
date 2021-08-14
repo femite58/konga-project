@@ -1,0 +1,74 @@
+@import '../theme/colors.scss';
+.contentSection {
+    background: #fff;
+    padding: 18px 29px 50px;
+    border-radius: 5px;
+}
+
+.contentHead {
+    font-size: 20px;
+    padding-bottom: 11px;
+    margin-bottom: 30px;
+    border-bottom: 1.5px solid #e7e7e7;
+    font-weight: bold;
+}
+
+.inputParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inputSection {
+    width: 48%;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    font-size: 13px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+form button {
+    padding: 8px 34px;
+    font-weight: bold;
+    font-size: 18px;
+    background: $tertiary;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+}
+
+@media (max-width: 520px) {
+    .inputSection {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .contentSection {
+        padding: 20px 10px;
+    }
+}

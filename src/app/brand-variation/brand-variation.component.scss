@@ -1,0 +1,44 @@
+@import '../variation/variation.component.scss';
+#brandItemCont {
+    overflow: auto;
+    height: 300px;
+}
+
+#brandItemCont::-webkit-scrollbar {
+    width: 5px;
+}
+
+#brandItemCont::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+#brandItemCont::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}
+
+.inputCont {
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background: #fff;
+    margin: 21px 10px;
+}
+
+.inputCont span {
+    font-size: 16px;
+    color: #ccc;
+    padding-right: 10px;
+}
+
+input[type="text"] {
+    border: none;
+    padding: 9px 8px;
+    width: 80%;
+}
+
+input[type="text"]:focus {
+    border: none;
+    outline: none;
+}

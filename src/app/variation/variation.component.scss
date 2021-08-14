@@ -1,0 +1,180 @@
+@import '../theme/colors.scss';
+.variationSuperParent {
+    max-height: 2100px;
+    overflow: auto;
+}
+
+.filterSortContainer {
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+    background: #fff;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.filterCont,
+.sortCont {
+    text-align: center;
+    color: $secondary;
+    width: 50%;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.filterSortContainer span {
+    cursor: pointer;
+}
+
+.sortCont {
+    border-left: 2px solid $secondary;
+}
+
+.variationSuperParent::-webkit-scrollbar {
+    width: 5px;
+}
+
+.variationSuperParent::-webkit-scrollbar-thumb {
+    background: #ccc;
+}
+
+.variationSuperParent::-webkit-scrollbar-thumb:hover {
+    background: grey;
+}
+
+.variationHeadingCont {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.accInactive {
+    font-size: 23px;
+    line-height: 0px;
+}
+
+.variationHeadingCont span {
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.variationHeadingCont h3 {
+    font-size: 15px;
+    color: #1c1d1f;
+    margin: 0;
+    font-weight: bold;
+}
+
+.variationCont {
+    padding: 20px 10px 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.variationItemsCont {
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+.variationItems {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding-top: 8px;
+}
+
+.variationItemCount {
+    font-size: 10px;
+}
+
+.selection {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.selectionText {
+    margin-left: 8px;
+}
+
+.catItem {
+    padding-top: 7px;
+    color: #1c1d1f;
+    display: block;
+}
+
+.backApplyContainer {
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    background: #fff;
+    padding: 15px 10px;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 13px;
+    box-shadow: 0 5px 10px #dfdfdf;
+}
+
+.backApplyContainer i {
+    font-size: 18px;
+}
+
+.backApplyContainer span {
+    color: $secondary;
+    cursor: pointer;
+}
+
+.backApplyContainer span:first-child {
+    color: #000;
+}
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 648px) {
+    .variationSuperParent {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 100;
+        transition: 0.6s ease;
+        background: #ebebeb;
+        padding: 59px 0px 0px;
+    }
+    .variationHeadingCont {
+        background: #fff;
+        margin-bottom: 1.5px;
+        padding: 12px 10px;
+    }
+    .variationItems,
+    .catItem {
+        padding: 12px 10px;
+        border-top: 1.4px solid #e9e9e9;
+        background: #fff;
+    }
+    .variationCont {
+        padding: 0px;
+        margin-bottom: 10px;
+        border-bottom: none;
+        background: #fff;
+        box-shadow: 0 5px 10px #dfdfdf;
+    }
+    .mobile {
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+}

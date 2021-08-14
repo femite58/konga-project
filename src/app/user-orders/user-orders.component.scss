@@ -1,0 +1,524 @@
+@import '../theme/colors.scss';
+@import '../profile-page/profile-page.component.scss';
+.ordersParent {
+    border-radius: 5px;
+    display: flex;
+    background: #fff;
+    overflow: hidden;
+}
+
+.orderSection,
+.detailSection {
+    width: 50%;
+    height: 700px;
+}
+
+.orderSection {
+    border-right: 1px solid #e2e2e2;
+}
+
+.orderHead {
+    padding: 17px;
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+    box-shadow: 0 3px 5px #cccccc;
+}
+
+.orderItemCont {
+    padding: 30px;
+    height: 646.8px;
+}
+
+.orderItem {
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.itemHead {
+    background: #f2f2f2;
+    font-size: 12px;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.orderInfo {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #9b9b9b;
+}
+
+.orderItemDetails {
+    padding: 0 5px;
+    flex: 60%;
+}
+
+.detailItem {
+    font-size: 12px;
+}
+
+.detailItem b {
+    margin-right: 5px;
+}
+
+.deliveryAdderss {
+    font-size: 13px;
+    flex: 40%;
+    text-align: right;
+}
+
+.deliveryAdderss b {
+    margin-right: 5px;
+}
+
+.itemImages {
+    padding: 10px 15px 15px;
+    // display: flex;
+}
+
+.itemImages img {
+    // height: 50px;
+    width: 50px;
+    margin: 0 5px 5px 0;
+}
+
+.selectedOrder {
+    background: #fff8ed;
+    border-color: #f5a623;
+}
+
+.selectedOrder .itemHead {
+    background: #f5a62333;
+}
+
+.selectedOrder .orderInfo {
+    color: #000;
+}
+
+.noSelTrans {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    text-align: center;
+}
+
+.svgCont {
+    margin-bottom: 30px;
+}
+
+.noSelTrans div:nth-child(2),
+.noSelTrans div:last-child {
+    font-size: 14px;
+    color: #404553;
+    font-weight: bold;
+}
+
+.noSelTrans div:last-child {
+    font-weight: normal;
+}
+
+.detailHead {
+    background: #e7e7e7;
+    color: #1c1d1f;
+    height: 53.2px;
+    font-size: 13px;
+    display: flex;
+    // justify-content: space-between;
+}
+
+.detailHead>span {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.menuSelected {
+    background: #9b9b9b;
+    color: #fff;
+}
+
+.detailBody {
+    padding: 30px;
+    height: 646.8px;
+    overflow-y: auto;
+}
+
+.totalDetailItem {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.totalDetailHead {
+    background: #f2f2f2;
+    font-size: 13px;
+}
+
+.detailHeadItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.subHeadItem {
+    width: 47%;
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+.subHeadItem b,
+.subHeadItem>span:last-child {
+    margin-left: 5px;
+}
+
+.soldBy {
+    color: #644ba0;
+}
+
+.trackInfo {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.trackInfo span:first-child {
+    color: $secondary;
+    font-size: 13px;
+}
+
+.trackInfo span:last-child {
+    color: #fff;
+    font-size: 11px;
+    width: 80px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.trackInfo span:first-child i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.shipped {
+    background: #004670 !important;
+}
+
+.processing {
+    background: #f5a623 !important;
+}
+
+.orderProductInfo {
+    display: flex;
+    padding: 10px 10px 20px;
+}
+
+.imgCont {
+    width: 100px;
+    padding: 5px;
+}
+
+.prodInfoText .prodName,
+.prodInfoText div:last-child {
+    font-size: 13px;
+    color: #1c1d1f;
+}
+
+.prodInfoText .price {
+    color: #000;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.mobile {
+    display: none;
+    width: 100%;
+}
+
+.mobileOrderSection {
+    width: 100%;
+}
+
+.datedOrderItem {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 12px;
+    width: 100%;
+}
+
+.datedItemHead,
+.datedItemInfo {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.datedItemHead>span {
+    color: $secondary;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.datedItemInfo div>span {
+    margin-left: 5px;
+}
+
+.datedItemImg {
+    margin-top: 10px;
+}
+
+.datedItemImg img {
+    width: 60px;
+    margin: 0 5px 5px 0;
+}
+
+.filterDetailSec {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 13px;
+    color: #1c1d1f;
+}
+
+.filterHead {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.filterHead div span {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.filterHead>span {
+    font-weight: 500;
+    font-size: 12px;
+    color: $secondary;
+    cursor: pointer;
+}
+
+.detailSecItem {
+    margin-top: 10px;
+}
+
+.detailSecItem div:last-child {
+    color: #9b9b9b;
+}
+
+.datedOrderDetailItem {
+    border-radius: 4px;
+    background: #fff;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.itemStatusHead {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 3px solid #e6e6e6;
+}
+
+.itemStatusHead span {
+    color: #fff;
+    font-size: 11px;
+    width: 80px;
+    text-align: center;
+    line-height: 18px;
+}
+
+.viewOrderSummary {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: $secondary;
+    font-weight: 500;
+    border-top: 1px solid #e2e2e2;
+}
+
+.viewOrderSummary span {
+    cursor: pointer;
+}
+
+.filterSection {
+    font-size: 13px;
+}
+
+.filterSecHead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.filterSecHead div {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filterSecHead div i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.filterSecHead>span {
+    cursor: pointer;
+}
+
+.filterSecBody>div {
+    font-size: 14px;
+    padding: 0 10px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.filterOptions {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 5px;
+    background: #fff;
+}
+
+.filterOptions input {
+    margin-right: 5px;
+}
+
+.filterOptions label {
+    flex: 1;
+    margin: 0;
+}
+
+.orderSummaryCont {
+    width: 100%;
+}
+
+.orderSummaryHead {
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 10px;
+}
+
+.orderSummaryHead i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.orderSummaryBody {
+    padding: 10px;
+    background: #fff;
+    font-size: 12px;
+}
+
+.summaryItem {
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.summaryItem>span:last-child {
+    font-weight: 500;
+}
+
+.orderNo {
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.summaryItem:nth-child(6),
+.summaryItem:nth-child(7) {
+    flex-direction: column;
+}
+
+.summaryItem:last-child {
+    border: none;
+}
+
+.backAction {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 2px;
+    background: #fff;
+    justify-content: space-between;
+}
+
+.backAction i {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.backAction div {
+    display: flex;
+    align-items: center;
+}
+
+.backAction>span {
+    font-size: 12px;
+    font-weight: 500;
+    color: $secondary;
+}
+
+@media (max-width: 1250px) {
+    .orderSection {
+        width: 42%;
+    }
+    .detailSection {
+        width: 58%;
+    }
+    .detailBody,
+    .orderItemCont {
+        padding: 20px;
+    }
+    .detailHead>span {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 880px) {
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block;
+    }
+    .ordersParent {
+        background: #f5f5f5;
+    }
+}

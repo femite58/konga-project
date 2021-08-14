@@ -1,0 +1,823 @@
+@import '../theme/colors.scss';
+.head {
+    display: flex;
+    padding: 20px 35px;
+    align-items: center;
+}
+
+.head img {
+    height: 50px;
+    position: absolute;
+    top: 20px;
+}
+
+.pageTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 25px;
+    color: #1c1d1f;
+    font-weight: bold;
+    margin: 16px;
+}
+
+.bodySection {
+    padding: 10px 35px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+.deliveryOptions,
+.reviewOrder,
+.paymentOptions {
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.deliveryOptions .deliveryHead,
+.reviewOrder .orderHead {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #1c1d1f;
+    border-bottom: 1px solid #e6e6e6;
+    height: 52px;
+}
+
+.deliveryHead h1,
+.orderHead h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.svgCont {
+    margin-right: 10px;
+    line-height: 22px;
+}
+
+.deliveryBody {
+    padding: 15px 20px;
+}
+
+.flexCont {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.flexItem {
+    width: 48%;
+}
+
+.deliveryItem {
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+}
+
+.deliveryItem .itemHead {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.deliveryItem .itemHead h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: $secondary;
+    margin: 0;
+}
+
+.deliveryItem .itemHead a {
+    font-size: 12px;
+    font-weight: 600;
+    color: $primary;
+    padding: 6px;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.instructItem {
+    padding: 10px;
+    font-size: 0.75rem;
+}
+
+.instructItem p {
+    margin: 0;
+    line-height: 14px;
+    font-weight: 400;
+    color: #212529;
+}
+
+.instructItem:first-child {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.instructItem:last-child {
+    margin: 10px;
+    background: #f3f3f3;
+    border-radius: 4px;
+}
+
+.orderItemHead {
+    display: flex;
+    padding: 10px 20px;
+    background: #e6e6e6;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+.orderItemHead span:first-child {
+    flex: 3;
+}
+
+.orderItemHead span:not(:first-child) {
+    flex: 1;
+}
+
+.orderItemHead span:nth-child(2) {
+    text-align: center;
+}
+
+.orderItemHead span:last-child {
+    text-align: right;
+}
+
+.orderItemCont {
+    padding: 0 20px;
+}
+
+.paymentOptions {
+    padding-bottom: 10px;
+}
+
+.paymentItem {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.paymentItem:first-child {
+    font-weight: bold;
+    color: #000;
+    justify-content: unset;
+    align-items: center;
+}
+
+.paymentItem:first-child h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.accHead {
+    padding: 13px 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+.accHead span {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+}
+
+.accHead i {
+    font-size: 25px;
+    color: #cacaca;
+    line-height: 16px;
+    transition: 0.4s ease;
+}
+
+.accBody {
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.cusAcc .paymentItem {
+    justify-content: space-between;
+}
+
+.paymentItem input {
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
+    padding: 10px;
+    height: 35px;
+    display: block;
+    flex: 1;
+    margin-right: 10px;
+    font-size: 13px;
+}
+
+.paymentItem input::placeholder {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.paymentItem button {
+    padding: 8px;
+    color: $primary;
+    border: 1px solid $primary;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Arial;
+    font-weight: bold;
+    background: none;
+    display: block;
+    line-height: 17px;
+    transition: 0.3s ease;
+}
+
+.paymentItem button:hover {
+    background: $primary;
+    color: #fff;
+}
+
+.paymentItem input:focus,
+.paymentItem button:focus {
+    outline: none;
+}
+
+.locationInstrCont {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.locationInstr {
+    margin: 15px;
+    padding: 30px 15px;
+    background: #fdfdfd;
+}
+
+.locationInstr p {
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 19px;
+}
+
+.paymentChoice {
+    padding: 0 15px;
+    margin-top: 10px;
+}
+
+.payChoiceItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    width: 100%;
+    background: none;
+}
+
+.payChoiceItem:focus {
+    outline: none;
+}
+
+.payChoiceItem span:first-child {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: Arial;
+    color: #000;
+    line-height: 20px;
+}
+
+.payChoiceItem span:last-child {
+    display: flex;
+    height: 15px;
+    width: 15px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background: #ebebeb;
+    box-shadow: inset 0 2px 2px #969696;
+}
+
+.payChoiceItem span:last-child i {
+    font-size: 8px;
+    color: #fff;
+}
+
+.selectedPay {
+    border-color: #f5a623;
+    background: #fffbf4;
+}
+
+.selectedPay span:last-child {
+    background: $tertiary;
+    box-shadow: unset;
+}
+
+.paymentItem:nth-child(4) {
+    font-size: 13px;
+}
+
+.paymentItem:nth-child(4)>span:first-child {
+    color: #000;
+}
+
+.paymentItem:nth-child(4)>span:last-child {
+    color: #4a4a4a;
+    font-weight: bold;
+}
+
+.paymentItem:nth-child(5) span:first-child {
+    color: #000;
+    font-size: 13px;
+    flex: 2;
+}
+
+.paymentItem:nth-child(5) span:last-child {
+    color: #9b9b9b;
+    font-size: 10px;
+    text-align: right;
+    flex: 1;
+}
+
+.paymentItem:nth-child(5) .chargeAmnt,
+.paymentItem:nth-child(5) .chargeAmnt span {
+    color: #4a4a4a !important;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+    flex: 1;
+}
+
+.paymentItem:nth-child(6) h4 {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.excludingInfo {
+    padding: 2px 15px;
+    text-align: right;
+    color: #b87300;
+    font-size: 11px;
+}
+
+.btnContainer {
+    padding: 15px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.btnContainer a {
+    display: block;
+    background: $tertiary;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+.weAccept {
+    padding: 10px 15px 5px;
+    font-size: 11px;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weAccept img {
+    height: 12px;
+}
+
+.secure {
+    display: flex;
+    color: #4a4a4a;
+    font-size: 11px;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.secure span {
+    margin-left: 2px;
+    opacity: 0.4;
+}
+
+@media (max-width: 767px) {
+    .flexItem {
+        width: 100%;
+    }
+    .flexItem:first-child {
+        margin-bottom: 15px;
+    }
+    .deliveryBody {
+        padding: 10px;
+    }
+    .bodySection {
+        padding: 0px 0 10px;
+    }
+    .orderBody,
+    .orderItem,
+    .orderItemCont {
+        background: #f5f5f5 !important;
+    }
+    .orderItemCont {
+        padding: 0;
+    }
+    .orderBody {
+        padding: 10px;
+    }
+    .orderItemHead span:not(:first-child) {
+        display: none;
+    }
+    .head img {
+        height: 20px;
+    }
+    .head {
+        padding: 20px 15px;
+    }
+    .head h1 {
+        font-size: 15px;
+        margin: 0;
+    }
+}
+
+.addressFormModal,
+.locationFormModal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: #000000e0;
+    z-index: 200;
+}
+
+.sideDrawer {
+    height: 100%;
+    overflow-y: auto;
+    background: #fff;
+    width: 435px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.4s ease;
+}
+
+.modalHead {
+    padding: 14px 20px;
+    right: 0px;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0px 10px #b8b8b8c0;
+    position: sticky;
+}
+
+.modalHead h3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+}
+
+.modalHead button {
+    display: flex;
+    padding: 0 8px;
+    border: 1px solid #bebebe;
+    border-radius: 4px;
+    align-items: center;
+    background: none;
+    color: #b8b8b8;
+    font-size: 13px;
+    line-height: 28px;
+}
+
+.modalHead button span:first-child {
+    font-family: Calibri;
+    margin-right: 5px;
+}
+
+.modalHead button:hover {
+    color: $primary;
+    border-color: $primary;
+}
+
+.modalHead button:focus {
+    outline: none;
+}
+
+.formBody {
+    padding: 20px;
+}
+
+.inputItem {
+    padding-bottom: 20px;
+}
+
+.inputItem label {
+    display: block;
+    width: 100%;
+    font-size: 13px;
+    color: #000;
+    margin: 0;
+}
+
+.inputItem input,
+.inputItem select {
+    margin-top: 10px;
+    padding: 0 15px;
+    display: block;
+    width: 100%;
+    border: 0.1px solid #8a8a8a;
+    border-radius: 3px;
+    height: 40px;
+    font-size: 13px;
+    box-shadow: none;
+    outline: none;
+    font: 400 13.33333px Arial;
+}
+
+.inputItem input {
+    appearance: textfield;
+}
+
+.inputItem input::placeholder {
+    font-size: 13px;
+}
+
+.inputItem input:focus {
+    outline: none;
+    border-color: #000;
+}
+
+.btnCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnCont button {
+    display: block;
+    width: 48%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font: 15px Arial;
+    line-height: 22.5px;
+    height: 40px;
+    transition: 0.3s ease;
+}
+
+.btnCont button:first-child {
+    background: $tertiary;
+    color: #fff;
+    border: 1px solid $tertiary;
+}
+
+.btnCont button:first-child:disabled {
+    opacity: 0.7;
+}
+
+.btnCont button:last-child {
+    background: #fff;
+    color: $primary;
+    border: 1px solid $primary;
+}
+
+.btnCont button:last-child:hover,
+.btnCont button:first-child:hover {
+    background: $primary;
+    color: #fff;
+    border-color: $primary;
+}
+
+.btnCont button:first-child:disabled:hover {
+    background: $tertiary;
+    border-color: $tertiary;
+    cursor: not-allowed;
+}
+
+.btnCont button:focus {
+    outline: none;
+}
+
+.pickupLocation {
+    padding: 20px;
+    // transform: translateY(58px);
+    top: 58px;
+    border-bottom: 1px solid #e6e6e6;
+    position: sticky;
+    width: 100%;
+    background: #fff;
+    right: 0px;
+    z-index: 2;
+}
+
+.findText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    color: #1c1d1f;
+    margin-bottom: 10px;
+}
+
+.findText span:last-child {
+    color: $secondary;
+}
+
+.selectCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectCont select {
+    display: block;
+    height: 40px;
+    width: 48%;
+    border: 1px solid #c0c0c0;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.selectCont select:focus {
+    outline: none;
+}
+
+.locationItem {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.locationHead {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.locationHead span {
+    font-size: 12px;
+    font-weight: bold;
+    color: $secondary;
+}
+
+.locationDetails {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 500px;
+}
+
+.detailItem {
+    display: flex;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.detailItem .svgCont {
+    line-height: 12px;
+}
+
+.detailItem span {
+    text-align: left;
+}
+
+.checkCont {
+    background: $tertiary;
+    border-radius: 100%;
+    height: 14px;
+    width: 14px;
+    color: #fff;
+    margin-right: 10px;
+    text-align: center;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.unselected {
+    height: 14px;
+    width: 14px;
+    margin-right: 10px;
+    background: #e6e6e6;
+    border-radius: 100%;
+    box-shadow: inset -1px 1px 2px #a7a7a7;
+}
+
+.checkCont i {
+    font-size: 8px;
+    font-weight: lighter;
+}
+
+.locationItem:focus {
+    outline: none;
+}
+
+.selectedLocation,
+.chosen {
+    border-color: #f5a623;
+    background: #fffbf4;
+    border-radius: 3px;
+    outline: none;
+}
+
+.selectedLocation .unselected {
+    display: none;
+}
+
+.selectedLocation .checkCont {
+    display: flex;
+}
+
+.selectedLocation svg path,
+.chosen svg path {
+    fill: #f5a623;
+    stroke: #f5a623;
+}
+
+.useAddressBtn {
+    position: sticky;
+    right: 0px;
+    width: 100%;
+    padding: 17px;
+    bottom: 0px;
+    top: calc(100vh - 76px);
+    background: #f2f2f2;
+    z-index: 200;
+}
+
+.useAddressBtn button {
+    background: $tertiary;
+    color: #fff;
+    border-radius: 4px;
+    padding: 11px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    height: 42px;
+    line-height: 20px;
+}
+
+.chosen .itemHead a {
+    background: #f5a623;
+    color: #fff;
+    border: none;
+}
+
+.addAddress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addAddress span {
+    color: #1c1d1f;
+    font-size: 13px;
+}
+
+.addAddress button {
+    color: $primary;
+    padding: 8px;
+    display: inline-block;
+    border: 1px solid $primary;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: none;
+    line-height: 19px;
+    background-color: transparent;
+}
+
+.validateErr {
+    color: red;
+    font-size: 13px;
+}
+
+@media (max-width: 500px) {
+    .sideDrawer {
+        width: 100%;
+    }
+}

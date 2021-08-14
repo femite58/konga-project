@@ -1,0 +1,32 @@
+<div class="sponsProdCont">
+    <div class="sponsTitleTexts">
+        <h4>Sonsored Products</h4>
+        <a routerLink="/">See all Items</a>
+    </div>
+    <div #sponsCont class="sponsProdItemCont" (mousedown)="dragStart($event)" (touchstart)="dragStart($event)" (touchend)="dragStop($event)" (mouseup)="dragStop($event)">
+        <div *ngFor="let prod of sponsProdList" class="prodItem">
+            <a routerLink="/">
+				<div *ngIf="prod.genPrice > 0" class="percOff">{{(100 - ((prod.sellPrice/prod.genPrice) * 100)) | number: "1.1-1"}}% OFF</div>
+				<div class="imageContainer">
+					<img [src]="prod.img" class="w-100 h-100">
+				</div>
+				<div class="prodInfoCont">
+					<h3>{{prod.name}}</h3>
+					<div class="priceCont">
+						<span class="prices">
+							<span class="sellPrice">{{prod.sellPrice | currency:"N":"symbol":"1.0"}}</span>
+							<span *ngIf="prod.genPrice > 0" class="genPrice"> {{prod.genPrice | currency:"N":"symbol":"1.0"}}</span>
+						</span>
+						<span *ngIf="prod.genPrice > 0" class="savings">You saved {{(prod.genPrice - prod.sellPrice) | currency:"N":"symbol":"1.0"}}</span>
+					</div>
+				</div>
+			</a>
+        </div>
+        <div class="prevCont">
+            <a (click)="productSlider(-1)"><i class="fa fa-angle-left"></i></a>
+        </div>
+        <div class="nextCont">
+            <a (click)="productSlider(1)"><i class="fa fa-angle-right"></i></a>
+        </div>
+    </div>
+</div>

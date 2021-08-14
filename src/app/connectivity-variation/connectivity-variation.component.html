@@ -1,0 +1,14 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Connectivity</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="connVarContainer" class="variationItemsCont" [style.height.px]="opened ? totalCollapseH : '0'">
+        <div *ngFor="let cvar of connVarList" class="variationItems">
+            <div class="selection">
+                <input type="checkbox"><span class="selectionText">{{cvar.type}}</span>
+            </div>
+            <span class="variationItemCount">{{cvar.count | currency: " ":"symbol":"1.0"}}</span>
+        </div>
+    </div>
+</div>

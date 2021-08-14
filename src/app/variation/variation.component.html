@@ -1,0 +1,53 @@
+<div class="mobile">
+    <div class="filterSortContainer">
+        <div class="filterCont">
+            <span (click)="toggleFilter(true, 'filter')"><i class="fa fa-glass"></i> FILTER</span>
+        </div>
+        <div class="sortCont">
+            <span (click)="toggleFilter(true, 'sort')"><i class="fa fa-sort"></i> SORT</span>
+        </div>
+    </div>
+</div>
+<div class="variationSuperParent" [style.left.%]="openFilter ? 0 : -100">
+    <div class="mobile">
+        <div class="backApplyContainer" [style.position]="openFilter ? 'fixed':'absolute'">
+            <span><i class="fa fa-arrow-left" (click)="toggleFilter(false)"></i> Filter</span>
+            <span>Apply Filter</span>
+        </div>
+    </div>
+    <app-browse-categories></app-browse-categories>
+    <app-price-variation></app-price-variation>
+    <app-brand-variation></app-brand-variation>
+    <app-screen-size-variation></app-screen-size-variation>
+    <app-ram-variation></app-ram-variation>
+    <app-battery-variation></app-battery-variation>
+    <app-connectivity-variation></app-connectivity-variation>
+    <app-hard-drive-variation></app-hard-drive-variation>
+    <app-osvariation></app-osvariation>
+    <app-color-variation></app-color-variation>
+    <app-availability-variation></app-availability-variation>
+    <app-shipping-variation></app-shipping-variation>
+    <app-rating-variation></app-rating-variation>
+</div>
+
+<div class="variationSuperParent mobile" [style.left.%]="openSort ? 0 : -100">
+    <div class="backApplyContainer" [style.position]="openSort ? 'fixed':'absolute'">
+        <span><i class="fa fa-arrow-left" (click)="toggleFilter(false)"></i> Sort</span>
+        <span>Apply</span>
+    </div>
+    <div class="variationItems">
+        <div class="selection">
+            <input type="radio"><span class="selectionText">Relevant</span>
+        </div>
+    </div>
+    <div class="variationItems">
+        <div class="selection">
+            <input type="radio"><span class="selectionText">Price - High To Low</span>
+        </div>
+    </div>
+    <div class="variationItems">
+        <div class="selection">
+            <input type="radio"><span class="selectionText">Price - Low To High</span>
+        </div>
+    </div>
+</div>

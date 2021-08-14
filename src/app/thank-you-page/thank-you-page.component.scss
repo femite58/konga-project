@@ -1,0 +1,90 @@
+@import '../theme/colors.scss';
+.thankYou {
+    max-width: 550px;
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+p {
+    color: #3f3f3f;
+    font-size: 13px;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+    color: $tertiary;
+    margin: 20px;
+    text-align: center;
+}
+
+p:nth-child(3) {
+    max-width: 200px;
+    text-align: center;
+    margin: 0;
+}
+
+.orderDetails {
+    padding: 30px;
+    width: 350px;
+    margin: auto;
+    text-align: center;
+    margin: 20px 0;
+    border: 1px solid #e6e6e6;
+}
+
+.orderDetails p {
+    margin: 10px 10px 20px;
+}
+
+.orderDetails p span {
+    font-weight: bold;
+}
+
+.orderDetails a {
+    display: block;
+    width: 100%;
+    color: $primary;
+    border: 1px solid $primary;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 4px;
+    line-height: 38px;
+}
+
+.orderDetails a:hover {
+    background: $primary;
+    color: #fff;
+}
+
+p:last-child {
+    max-width: 300px;
+    text-align: center;
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .thankYou {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .orderDetails {
+        width: unset;
+    }
+}

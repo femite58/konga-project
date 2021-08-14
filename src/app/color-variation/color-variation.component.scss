@@ -1,0 +1,14 @@
+@import '../variation/variation.component.scss';
+.colorsFlexCont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.colors {
+    width: 33px;
+    height: 25px;
+    margin: 0 3.225% 10px 0;
+    border: 1px solid #000;
+}

@@ -1,0 +1,13 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Colour</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="colorVarContainer" class="variationItemsCont" [style.height.px]="opened ? totalCollapseH : '0'">
+        <div class="variationItems">
+            <div class="colorsFlexCont">
+                <span *ngFor="let cvar of colorVarList" class="colors" [style.backgroundColor]="cvar"></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Operating System</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="osVarContainer" class="variationItemsCont" [style.height.px]="opened ? totalCollapseH : '0'">
+        <div *ngFor="let osvar of osVarList" class="variationItems">
+            <div class="selection">
+                <input type="checkbox"><span class="selectionText">{{osvar.type}}</span>
+            </div>
+            <span class="variationItemCount">{{osvar.count | currency: " ":"symbol":"1.0"}}</span>
+        </div>
+    </div>
+</div>

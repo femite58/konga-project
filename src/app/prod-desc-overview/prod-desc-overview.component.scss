@@ -1,0 +1,401 @@
+@import '../theme/colors.scss';
+.prodInfoParent {
+    padding: 20px;
+    margin-top: 20px;
+    background: #fff;
+}
+
+.prodMenu {
+    margin-bottom: 20px;
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.prodMenu b {
+    font-size: 20px;
+    color: #1c1d1f;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.prodMenu .activeMenu {
+    color: $secondary;
+}
+
+.menuContent li,
+p,
+td {
+    color: #8f8f8f;
+}
+
+.overview li {
+    font-size: 15px;
+}
+
+.description {
+    height: 900px;
+    overflow-y: auto;
+}
+
+.description table {
+    border: 1px solid #8f8f8f;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.description table td {
+    font-size: 13px;
+    padding: 12px 15px;
+    border: 1px solid #e2e2e2;
+    text-align: left;
+}
+
+.description table td:last-child {
+    width: 80%;
+}
+
+.shipping .deliveryInfoItem,
+.warrantyCont,
+.retPolCont,
+.reviewSummaryCont,
+.svgWarCont {
+    display: flex;
+}
+
+.shipping .deliveryInfoItem:last-child {
+    margin-top: 20px;
+}
+
+.shipping p,
+.warrantyItem p,
+.retInfo p {
+    font-size: 12px;
+    margin: 0;
+}
+
+.shipping p span {
+    color: #000;
+}
+
+.deliveryInfoItem h5,
+.warrantyItem h5,
+.retInfo h5 {
+    font-size: 11.7px;
+    margin-bottom: 4px;
+    color: #1c1d1f;
+}
+
+.deliveryInfoItem .deliveryText {
+    margin-left: 20px;
+}
+
+.deliveryInfoItem:last-child .deliveryNote {
+    margin-top: 20px;
+}
+
+.warrantyItem,
+.retInfo {
+    margin-left: 20px;
+}
+
+.retInfo p a {
+    color: $secondary;
+}
+
+.review {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.reviewSummaryCont {
+    padding: 30px 0;
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.reviewCalc {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewRating {
+    width: fit-content;
+}
+
+.calcCont {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+}
+
+.calcCont h1 {
+    font-weight: 300;
+    color: #1c1d1f;
+    font-size: 70px;
+    margin: 0;
+    line-height: 65px;
+}
+
+.calcCont span {
+    font-size: 12px;
+    color: #8f8f8f;
+    white-space: nowrap;
+}
+
+.reviewRating div {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.reviewRating p {
+    width: 100px;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+i.fa.fa-star {
+    margin-right: 2px;
+}
+
+.star5 i,
+.star4 i,
+.star3 i {
+    color: orange;
+}
+
+.star4 i:last-child,
+.star3 i:last-child,
+.star3 i:nth-child(4),
+.star2 i,
+.star1 i {
+    color: #d4d4d4;
+}
+
+.star2 i:first-child,
+.star2 i:nth-child(2),
+.star1 i:first-child {
+    color: orange;
+}
+
+.scaleItem {
+    display: flex;
+    line-height: 12px;
+    margin-bottom: 12px;
+    align-items: center;
+    align-content: center;
+}
+
+.scaleItem .scale {
+    width: 200px;
+    margin: 0 15px;
+    height: 7px;
+    position: relative;
+    background: #e8e8e8;
+}
+
+.scaleItem .scale .indicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #644ba0;
+}
+
+.scaleItem span {
+    color: #dbdbdb;
+    font-size: 13px;
+}
+
+.valued span {
+    color: #644ba0;
+    font-weight: 500;
+}
+
+.reviewersInfoItem {
+    padding-top: 12px;
+    margin-top: 12px;
+    display: flex;
+}
+
+.reviewersInfo {
+    display: flex;
+}
+
+.reviewersInfo .firstLetter {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    text-align: center;
+    border-radius: 100%;
+    background: $secondary;
+    color: #fff;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.reviewersInfo .nameDate {
+    width: 150px;
+    margin-right: 20px;
+}
+
+.nameDate h4,
+.nameDate p {
+    font-size: 13px;
+}
+
+.nameDate h4 {
+    color: #1c1d1f;
+}
+
+.nameDate p {
+    margin: 0;
+    color: #9b9b9b;
+}
+
+.reviewerSection {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.reviewersComment p {
+    color: #8f8f8f;
+    font-size: 14px;
+    margin: 14px 0;
+}
+
+.mobileAcc {
+    display: none;
+    box-shadow: 3px 10px 5px #dfdfdfda;
+    margin-top: 20px;
+    background: #fff;
+}
+
+.collapseItem {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.collapseItem .menuHead {
+    display: flex;
+    padding: 20px 15px;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menuHead .menuTitle {
+    font-size: 14px;
+    margin: 0;
+    color: #4a4a4a;
+}
+
+.menuHead i {
+    transition: 0.5s ease;
+}
+
+.collapsable {
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+.noContent {
+    font-size: 15px;
+    color: #8f8f8f;
+}
+
+@media (max-width: 812px) {
+    .prodMenu b {
+        font-size: 18px;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .reviewCalc {
+        flex-direction: row;
+        width: 100%;
+        height: 65px;
+        align-items: baseline;
+        margin-bottom: 30px;
+        // vertical-align: baseline;
+    }
+    .calcCont {
+        width: fit-content;
+        margin-right: 15px;
+        margin-bottom: 0;
+    }
+    .reviewRating {
+        transform: translateY(-60%);
+    }
+    .reviewRating div {
+        justify-content: flex-start;
+        width: 75px;
+    }
+    .reviewRating p {
+        text-align: left;
+        width: 75px;
+        margin-bottom: 0;
+    }
+    .reviewSummaryCont {
+        padding: 10px 15px 20px;
+        border-top: none;
+        flex-direction: column;
+    }
+    .reviewersInfoItem {
+        padding: 12px 15px 0;
+        margin-top: 12px;
+        flex-direction: column;
+    }
+    .reviewersComment {
+        margin: 15px 0 0 55px;
+    }
+    .scaleItem .scale {
+        width: 150px;
+    }
+    .warrantyCont {
+        flex-direction: column;
+    }
+    .svgWarCont,
+    .lastItem {
+        padding: 0 15px 20px;
+    }
+    .warrantyItem,
+    .lastItem h5,
+    .lastItem p {
+        margin-left: 10px;
+    }
+    .lastItem {
+        margin-left: 50px;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobileAcc {
+        display: block;
+    }
+    .retPolicy,
+    .description,
+    .shipping .deliveryInfoItem,
+    .overview {
+        padding: 0 15px 20px;
+    }
+    .shipping .deliveryInfoItem:last-child {
+        margin-top: 15px;
+    }
+    .overview li {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 350px) {
+    .scaleItem .scale {
+        margin: 0 10px;
+    }
+}

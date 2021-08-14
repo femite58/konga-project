@@ -1,0 +1,88 @@
+<div class="desktop"><app-topmost-header></app-topmost-header></div>
+<div class="desktop"><app-search-header></app-search-header></div>
+<app-menu-bar></app-menu-bar>
+<div class="container-fluid topBannerCont">
+	<div class="flexCont">
+		<div class="bannerCont">
+			<app-fade-slider></app-fade-slider>
+		</div>
+		<div class="gridParent">
+			<app-top-right-grid></app-top-right-grid>
+		</div>
+	</div>
+</div>
+
+<!-- BrandLogoLocator -->
+<div class="container-fluid brandLocationParent">
+	<app-brand-location-cont></app-brand-location-cont>
+</div>
+
+<!-- Recommended for you  -->
+<app-recomm-products></app-recomm-products>
+
+<!-- Top Products Category -->
+<div class="container-fluid topProductsCatCont">
+	<div class="prodFlexCont">
+		<div *ngFor="let prodimg of topProdList" class="imageContainer">
+			<a routerLink="/"><img [src]="prodimg" class="w-100"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Sponsored Products Category -->
+<app-spons-prod-slider></app-spons-prod-slider>
+
+<!-- Latest Deals  -->
+<app-latest-deals></app-latest-deals>
+
+<!-- Popular Category -->
+<app-popular-cat></app-popular-cat>
+
+<!-- Two Grid Products Category -->
+<div class="container-fluid twoGridProdCont">
+	<div class="twoGridFlexCont">
+		<div class="imageContainer">
+			<a routerLink="/"><img src="assets/images/twogridcat/1.jpg" class="w-100 h-100"></a>
+		</div>
+		<div class="imageContainer">
+			<a routerLink="/"><img src="assets/images/twogridcat/2.jpg" class="w-100 h-100"></a>
+		</div>
+	</div>
+</div>
+
+<!-- Best selling products -->
+<app-best-selling-prod></app-best-selling-prod>
+
+<!-- Four Grid Products -->
+<!-- <div class="container-fluid fourGridProdCont">
+	<div class="fourGridFlexCont">
+		<div class="fourGridFlexItem">
+			<a routerLink="/">
+				<div class="imageContainer">
+					<img src="assets/images/twogridcat/1.jpg" class="w-100 h-100">
+				</div>
+				<div class="textContainer">
+					<h4>Beko</h4>
+					<p>Domestic Appliances</p>
+					<span>SHOP NOW ></span>
+				</div>
+			</a>
+		</div>
+	</div>
+</div> -->
+
+<!-- Chat Icon  -->
+<app-chat-icon></app-chat-icon>
+
+<!-- Description -->
+<div class="container-fluid descriptionCont">
+	<div class="descriptionTextCont">
+		<h3>Online Shopping on Konga.com – Nigeria’s Largest Online Mall</h3>
+		<p>
+			Konga.com is Nigeria’s number one online Shopping destination.We pride ourselves in having everything you could possibly need for life and living at the best prices than anywhere else. Our access to Original Equipment Manufacturers and premium sellers gives us a wide range of products at very low prices. Some of our popular categories include electronics, mobile phones, computers, fashion, beauty products, home and kitchen, Building and construction materials and a whole lot more from premium brands. Some of our other categories include Food and drinks, automotive and industrial, books, musical equipment, babies and kids items, sports and fitness, to mention a few. To make your shopping experience swift and memorable, there are also added services like gift vouchers, consumer promotion activities across different categories and bulk purchases with hassle-free delivery. Enjoy free shipping rates for certain products and with the bulk purchase option, you can enjoy low shipping rates, discounted prices and flexible payment. When you shop on our platform, you can pay with your debit card or via KongaPay, which is a convenient and secured payment solution. Get the best of lifestyle services online. Don't miss out on the biggest sales online which takes place on special dates yearly.
+		</p>
+	</div>
+</div>
+
+<!-- Footer -->
+<app-footer></app-footer>

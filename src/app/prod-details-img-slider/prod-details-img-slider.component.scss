@@ -1,0 +1,131 @@
+@import '../theme/colors.scss';
+.slideContainer {
+    width: 100%;
+    display: none;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // height: 300px;
+    border-radius: 5px;
+    // overflow: hidden;
+    animation-name: fade;
+    animation-duration: 0.8s;
+    transition: 0.8s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.indicatorCont {
+    display: none;
+    // position: absolute;
+    width: 100%;
+    padding: 10px;
+    bottom: 0;
+    margin: 20px 0 10px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.indicatorCont .indicator {
+    display: inline-block;
+    width: 62px;
+    height: 62px;
+    border: 1px solid #cccccc;
+    margin: 0 10px 0 0;
+    cursor: pointer;
+    transition: 0.8s ease;
+}
+
+.active {
+    border: 3px solid $fourthColor !important;
+}
+
+.prevCont,
+.nextCont {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.prevCont {
+    left: 0;
+}
+
+.nextCont {
+    right: 0;
+}
+
+.prevControl,
+.nextControl {
+    font-size: 35px;
+    display: block;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    box-shadow: 0 5px 5px #888;
+    border-radius: 100%;
+    color: black;
+    text-align: center;
+    line-height: 48px;
+    font-weight: bold;
+    background: #fff;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.nextControl {
+    /*float: right;*/
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.prevControl {
+    margin-left: 20px;
+}
+
+.prevControl:active,
+.nextControl:active {
+    transform: scale(0.9);
+}
+
+.centerImg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+@media (max-width: 500px) {
+    .prevControl,
+    .nextControl {
+        margin: 0 !important;
+    }
+    .indicatorCont {
+        justify-content: flex-start;
+    }
+    .indicatorCont .indicator {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+}

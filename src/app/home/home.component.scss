@@ -1,0 +1,174 @@
+@import '../theme/colors.scss';
+
+.topBannerCont {
+	padding: 20px 20px 0px;
+}
+
+.desktop {
+	display: block;
+}
+
+.flexCont {
+	display: flex;
+	width: 100%;
+}
+
+.flexCont .bannerCont {
+	width: 68%;
+}
+
+.flexCont .gridParent {
+	width: 32%;
+}
+
+.brandLocationParent {
+	padding: 0px 20px;
+	margin-bottom: 20px;
+}
+
+/*Top Products Category Section*/
+.topProductsCatCont {
+	padding: 0 20px;
+	margin-bottom: 30px;
+}
+
+.topProductsCatCont .prodFlexCont {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	height: fit-content;
+	padding-right: 10px;
+	background: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.prodFlexCont .imageContainer {
+	width: 16.667%;
+	padding: 10px 0px 10px 10px;
+	background: #fff;
+}
+
+.twoGridProdCont{
+	padding: 0 20px;
+	margin-bottom: 30px;
+}
+
+.twoGridFlexCont {
+	display: flex;
+	width: 100%;
+	background: #fff;
+}
+
+.twoGridFlexCont .imageContainer {
+	width: 48.85%;
+	margin: 10px 0 10px 10px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+/*.fourGridFlexCont {
+	background: transparent;
+}
+
+.fourGridFlexItem {
+	width: 23.82%;
+	height: 362px;
+	border-radius: 5px;
+	margin-right: 15px;
+	background: #fff;
+	overflow: hidden;
+}
+
+.fourGridFlexItem .imageContainer {
+	height: 60%;
+	width: 100%;
+}
+
+.fourGridFlexItem .textContainer {
+	height: 40%;
+	width: 100%;		
+	padding: 15px;
+}
+
+.textContainer h4 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.textContainer p {
+	font-size: 14px;
+	margin: 20px 0;
+	width: 100%;
+	overflow-x: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.textContainer span {
+	font-size: 13px;
+	color: $secondary;
+}*/
+
+.descriptionCont {
+	padding: 0 20px;
+	margin-bottom: 30px;
+}
+
+.descriptionTextCont {
+	background: #fff;
+	padding: 10px 20px 20px;
+	color: #5a5f66;
+	border-radius: 5px;
+}
+
+.descriptionTextCont h3 {
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+.descriptionTextCont p {
+	font-size: 14px;
+}
+
+@media (max-width: 1000px) {
+	.topProductsCatCont .prodFlexCont {
+		flex-wrap: wrap;
+		padding-bottom: 10px;
+	}
+
+	.prodFlexCont .imageContainer {
+		width: 33.33333%;
+		padding: 10px 0px 0 10px;
+	}
+
+	.twoGridFlexCont {
+		flex-wrap: wrap;
+		padding-bottom: 10px;
+	}
+
+	.twoGridFlexCont .imageContainer {
+		width: 95.8%;
+		margin: 10px 0 0 10px;
+	}
+}
+
+@media (max-width: 900px) {
+	.flexCont {
+		flex-direction: column;
+	}
+	.flexCont .bannerCont {
+		width: 100%;
+	}
+	.flexCont .gridParent {
+		width: 100%;
+		padding-top: 20px;
+		padding-left: 0;
+	}
+}
+
+@media (max-width: 771px) {
+	.desktop {
+		display: none;
+	}
+}

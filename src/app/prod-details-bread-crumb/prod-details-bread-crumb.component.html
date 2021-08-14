@@ -1,0 +1,15 @@
+<div class="container-fluid parent">
+    <div class="curCategoryCont">
+        <h2 class="d-inline-block font-weight-bold mobile">{{pageTitle}}</h2>
+        <span class="pageLinks desktop">
+			<a routerLink="/" class="previousLink">Home</a>
+            <span *ngIf="previousLink !== ''"><i class="fa fa-angle-right"></i></span>
+        <a *ngIf="previousLink !== ''" routerLink="/" class="previousLink">{{previousLink}}</a>
+        <span><i class="fa fa-angle-right"></i></span>
+        <a routerLink="/category-list" class="activeLink">{{activeLink}}</a>
+        </span>
+    </div>
+    <div class="categoryHeadingCont desktop">
+        <h2 class="d-inline-block font-weight-bold">{{pageTitle}}</h2>
+    </div>
+</div>

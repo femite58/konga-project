@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <a routerLink="/" class="logoContainer">
+        <img src="assets/images/konga_logo.png" class="w-100">
+    </a>
+    <a routerLink="/">Store Locator</a>
+    <div class="dropDown">
+        <a routerLink="/" class="dropParentLink">Help <i class="fa fa-angle-down"></i></a>
+        <div class="dropped">
+            <a routerLink="/">FAQs</a>
+            <a routerLink="/">Contact Us</a>
+        </div>
+    </div>
+    <div class="searchInput">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search for products, brands and categories...">
+            <div class="input-group-append">
+                <span class="input-group-text"><i class="fa fa-search"></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="loginParent">
+        <a routerLink="/">Sell on Konga</a>
+        <a *ngIf="!auth" routerLink="/login">Login / Signup</a>
+        <div *ngIf="auth" class="dropDown">
+            <a routerLink="/" class="dropParentLink">My Account <i class="fa fa-angle-down"></i></a>
+            <div class="dropped">
+                <span>Hi {{'Neeta'}}</span>
+                <a routerLink="/user/profile"><i class="fa fa-user-circle-o"></i><span> My Profile</span></a>
+                <a routerLink="/user/orders"><i class="fa fa-shopping-cart"></i><span>My Orders</span></a>
+                <a routerLink="/favorites"><i class="fa fa-heart-o"></i><span>My Saved Items</span></a>
+                <!-- <a routerLink="/"><i class="fa fa-folder-o"></i><span>My Wallet</span></a> -->
+                <!-- <a routerLink="/"><i class="fa fa-map-marker"></i><span>Track My Order</span></a> -->
+                <a routerLink="/" class="logout"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+            </div>
+        </div>
+        <a routerLink="/shopping-cart" class="cart"><i class="fa fa-shopping-cart"></i> My Cart <span>0</span></a>
+    </div>
+</div>

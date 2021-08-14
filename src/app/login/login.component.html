@@ -1,0 +1,48 @@
+<div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar>
+<div class="container-fluid loginParent">
+    <div class="centerCont">
+        <h2 class="heading">Login</h2>
+        <form>
+            <div class="emailAddress">
+                <label>Email Address or Phone Number</label>
+                <input class="emailInput" type="text" placeholder="Enter Email Address OR Phone Number">
+            </div>
+            <div class="passwordSection">
+                <div class="passwdText">
+                    <label>Password</label>
+                    <a routerLink="/">Forgot Password</a>
+                </div>
+                <div class="inputCont">
+                    <input #p type="password" placeholder="Enter Password">
+                    <span class="togglePass" (click)="p.type === 'text' ? p.type = 'password' : p.type = 'text'">
+                        {{p.type === 'text'? 'Hide':'Show'}}
+                    </span>
+                </div>
+            </div>
+            <button>Login</button>
+        </form>
+        <div class="orSection">
+            <span>OR</span>
+            <div class="hline">
+                <div></div>
+            </div>
+            <!-- <div class="orCicle">
+            </div> -->
+        </div>
+        <div class="socialSignup">
+            <a routerLink="/">
+                <span>Login with</span>
+                <img src="assets/images/sociallogo/f.webp"></a>
+            <a class="google" routerLink="/">
+                <span>Login with</span>
+                <img src="assets/images/sociallogo/g.webp">
+            </a>
+        </div>
+        <div class="signup text-center">
+            <a routerLink="/signup">Don’t have an account? Sign Up</a>
+        </div>
+    </div>
+</div>

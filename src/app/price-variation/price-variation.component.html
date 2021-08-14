@@ -1,0 +1,27 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Price</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="priceItemContainer" class="variationItemsCont" [style.height.px]="opened ? priceContH : '0'">
+        <div *ngFor="let pvar of priceVarList" class="variationItems">
+            <div class="selection">
+                <input type="radio"><span class="selectionText">{{pvar}}</span>
+            </div>
+        </div>
+        <div class="priceRange">
+            <div class="variationHeadingCont priceRangeHeading">
+                <h3>Custom Price Range</h3>
+            </div>
+            <div class="inputCont">
+                <span>&#8358;</span>
+                <input type="text" placeholder="Min" (keydown)="preventAlph($event)">
+            </div>
+            <div class="inputCont">
+                <span>&#8358;</span>
+                <input type="text" placeholder="Max" (keydown)="preventAlph($event)">
+            </div>
+            <button>GO</button>
+        </div>
+    </div>
+</div>

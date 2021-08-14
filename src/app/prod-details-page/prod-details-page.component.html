@@ -1,0 +1,14 @@
+<div class="desktop">
+    <app-topmost-header></app-topmost-header>
+</div>
+<div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar>
+<app-prod-details-bread-crumb [activeLink]="'Laptop'" [previousLink]="'Computers and Accessories'" [pageTitle]="'Computers and Accessories'"></app-prod-details-bread-crumb>
+<div class="bodySection">
+    <app-prod-details-image [users]="users"></app-prod-details-image>
+    <app-prod-desc-overview [users]="users"></app-prod-desc-overview>
+    <app-similar-item-section></app-similar-item-section>
+</div>
+<app-footer></app-footer>

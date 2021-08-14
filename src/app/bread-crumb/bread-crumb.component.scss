@@ -1,0 +1,108 @@
+@import '../theme/colors.scss';
+.parent {
+    padding: 20px 30px;
+    background: #fff;
+}
+
+.pageLinks a,
+.pageLinks,
+.curCategoryCont {
+    font-size: 13px;
+    color: grey;
+}
+
+.pageLinks .previousLink {
+    color: #000;
+}
+
+.pageLinks .activeLink {
+    color: $secondary;
+    font-weight: bold;
+}
+
+.pageLinks span {
+    font-size: 16px;
+}
+
+.pageLinks span i {
+    padding: 0 5px;
+}
+
+.curCategoryCont .resultCont {
+    font-size: 11px;
+}
+
+.curCategoryCont {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.categoryHeadingCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.categoryHeadingCont .sorting {
+    font-size: 11px;
+    color: grey;
+}
+
+.sorting .sortText {
+    font-size: 12px;
+}
+
+.sorting button {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-left-color: transparent;
+}
+
+.sorting .selectedSort {
+    color: $primary;
+    border-color: $primary;
+}
+
+.mobile {
+    display: none !important;
+}
+
+@media (max-width: 863px) {
+    .categoryHeadingCont h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 772px) {
+    .parent {
+        margin-top: 5px;
+    }
+    .categoryHeadingCont h2 {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 648px) {
+    .parent {
+        margin-top: 5px;
+    }
+    .curCategoryCont {
+        margin-bottom: 0px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .curCategoryCont h2 {
+        color: #000;
+        font-size: 20px;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: block !important;
+    }
+}

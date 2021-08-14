@@ -1,0 +1,196 @@
+<div #desktop class="container-fluid desktop">
+    <div class="allCatMegaMenu">
+        <span class="allCat" (mouseover)="active = 0"><a routerLink="/category-list">All Categories <i class="fa fa-bars"></i></a></span>
+        <div class="allCatDropped">
+            <div class="forOverflow">
+                <div *ngFor="let menu of menulist; let i=index" (mouseover)="active = i" class="menuCont">
+                    <a routerLink="/category-list" class="allCatMenuLinks" [class.active]="active == i">{{menu.title}}</a>
+                    <div class="subMenuDropped" [style.display]="active == i ? 'block':'none'">
+                        <div class="flexContainer">
+                            <div class="flexInnerCont">
+                                <div *ngFor="let submenu of menu.subMenus" class="flexItem">
+                                    <a routerLink="/category-list">
+                                        <h6 class="font-weight-bold">{{submenu.title}}</h6>
+                                    </a>
+                                    <a *ngFor="let subsublinks of submenu.subTitle" routerLink="/category-list">{{subsublinks}}</a>
+                                </div>
+                            </div>
+                            <div class="imageContainer">
+                                <img [src]="menu.imageUrl" class="w-100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let menu of menulist" class="megaMenu desktop">
+        <a routerLink="/category-list" class="megaMenuLink">{{menu.title}}</a>
+        <div class="megaMenuDropped">
+            <div class="flexContainer">
+                <div class="flexInnerCont">
+                    <div *ngFor="let submenu of menu.subMenus" class="flexItem">
+                        <a routerLink="/category-list">
+                            <h6 class="font-weight-bold">{{submenu.title}}</h6>
+                        </a>
+                        <a *ngFor="let subsublinks of submenu.subTitle" routerLink="/category-list">{{subsublinks}}</a>
+                    </div>
+                </div>
+                <div class="imageContainer">
+                    <img [src]="menu.imageUrl" class="w-100">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mobileParent mobile">
+    <div class="menu">
+        <div class="sideDrawerCont">
+            <div class="row">
+                <div class="col-6">
+                    <span class="toggleDrawer" (click)="toggleSideDrawer()">
+						<i *ngIf="!openSideDrawer" class="fa fa-bars"></i>
+						<i *ngIf="openSideDrawer" class="fa fa-times"></i>
+					</span>
+                    <a routerLink="/category-list" class="imageContainer">
+                        <img src="assets/images/logo-alternate.png" class="w-100">
+                    </a>
+                </div>
+                <div class="col-6">
+                    <div class="cartCont float-right">
+                        <i class="fa fa-home"></i>
+                        <i class="fa fa-shopping-cart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="sideDrawer" [style.left.%]="openSideDrawer ? '0' : '-100'">
+                <div *ngIf="!auth" class="loginContainer">
+                    <a (click)="toggleSideDrawer()" routerLink="/login">Login</a>
+                    <a (click)="toggleSideDrawer()" routerLink="/signup">Signup</a>
+                </div>
+                <div *ngIf="auth" class="accountSettings">
+                    <span><span>{{'Neeta'[0]}}</span></span>
+                    <div class="userInfo">
+                        <div><b>{{'Neeta Jade'}}</b></div>
+                        <div>{{'femite59@gmail.com'}}</div>
+                        <a (click)="toggleSideDrawer()" routerLink="/user/profile">ACCOUNT SETTINGS</a>
+                    </div>
+                </div>
+                <div class="fourGridCont">
+                    <a (click)="toggleSideDrawer()" routerLink="/shopping-cart">
+                        <div class="gridItem">
+                            <i class="fa fa-shopping-cart"></i>
+                            <div class="infoCont">
+                                <span>My Cart</span>
+                                <span>0 items in cart</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a (click)="toggleSideDrawer()" routerLink="/">
+                        <div class="gridItem">
+                            <i class="fa fa-map-marker"></i>
+                            <div class="infoCont">
+                                <span>Track Orders</span>
+                                <span>View order status</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a (click)="toggleSideDrawer()" *ngIf="auth" routerLink="/user/orders">
+                        <div class="gridItem">
+                            <i class="fa fa-shopping-bag"></i>
+                            <div class="infoCont">
+                                <span>My Orders</span>
+                                <span>{{1}} Items Ordered</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a *ngIf="auth" (click)="toggleSideDrawer()" routerLink="/favorites">
+                        <div class="gridItem">
+                            <i class="fa fa-heart-o"></i>
+                            <div class="infoCont">
+                                <span>My Saved Items</span>
+                                <span>View liked Items</span>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <a routerLink="/">
+                        <div class="gridItem">
+                            <i class="fa fa-tag"></i>
+                            <div class="infoCont">
+                                <span>Sell on Konga</span>
+                                <span>Join other merchants</span>
+                            </div>
+                        </div>
+                    </a> -->
+                    <a routerLink="/" (click)="toggleSideDrawer()">
+                        <div class="gridItem">
+                            <i class="fa fa-home"></i>
+                            <div class="infoCont">
+                                <span>Physical Stores</span>
+                                <span>Stores around you</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a *ngIf="auth" (click)="toggleSideDrawer()" routerLink="/user/delivery">
+                        <div class="gridItem">
+                            <i class="fa fa-home"></i>
+                            <div class="infoCont">
+                                <span>My Addresses</span>
+                                <span>View saved addresses</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="categoriesTitleCont">
+                    <h6>Categories</h6>
+                    <div *ngIf="selectedCat != ''" class="indicator" (click)="selectCat(savedIndex, -1)"><i class="fa fa-angle-left"></i><span><a routerLink="/">{{selectedCat}}</a></span></div>
+                    <div *ngFor="let link of catList; let i=index" class="linkItemCont" (click)="selectCat(i, 1)">
+                        <a routerLink="/">{{link}}</a>
+                        <span><i class="fa fa-angle-right"></i></span>
+                    </div>
+                    <a routerLink="/" (click)="toggleSideDrawer()" class="contactUs"><i class="fa fa-phone"></i> Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="searchCont">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Search for products, brands and categories...">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="categoriesIcoCont">
+            <a routerLink="/">
+                <div class="colFlex">
+                    <i class="fa fa-th"></i>
+                    <span>Browse All</span>
+                </div>
+            </a>
+            <a routerLink="/">
+                <div class="colFlex">
+                    <i class="fa fa-shopping-bag"></i>
+                    <span>Fashion</span>
+                </div>
+            </a>
+            <a routerLink="/">
+                <div class="colFlex">
+                    <i class="fa fa-laptop"></i>
+                    <span>Computers</span>
+                </div>
+            </a>
+            <a routerLink="/">
+                <div class="colFlex">
+                    <i class="fa fa-mobile"></i>
+                    <span>Phones</span>
+                </div>
+            </a>
+            <a routerLink="/">
+                <div class="colFlex">
+                    <i class="fa fa-tag"></i>
+                    <span>All Deals</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

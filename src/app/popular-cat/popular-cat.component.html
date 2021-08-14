@@ -1,0 +1,26 @@
+<div class="container-fluid recommendProdCont">
+	<div class="recommendTitleTexts">
+		<h4>Popular Categories</h4>
+	</div>
+	<div class="categFlexCont">
+		<div *ngFor="let prod of popularProdList" class="flexItem">
+			<div class="linkImgCont">
+				<a routerLink="/">
+					<div class="smImgCont">
+						<img [src]="prod.smallImg" class="w-100">
+					</div>
+					<h3 class="prodCatText">{{prod.title}}</h3>
+				</a>
+				<div class="linksCont">
+					<a *ngFor="let link of prod.links" routerLink="/">{{link}}</a>
+					<!-- <a routerLink="/">Desktop and Monitors</a>
+					<a routerLink="/">Computing Accessories</a> -->
+				</div>
+			</div>
+			<div class="lgImgCont">
+				<img [src]="prod.bigImg" class="w-100 h-100">
+				<p>{{prod.title}}</p>
+			</div>
+		</div>
+	</div>
+</div>

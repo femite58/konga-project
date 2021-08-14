@@ -1,0 +1,20 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Brand</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="brandContainer" class="variationItemsCont" [style.height.px]="opened ? brandContH : '0'">
+        <div class="inputCont">
+            <input type="text" placeholder="Search Brand..." [(ngModel)]="searchText" (keyup)="filterSearch()">
+            <span><i class="fa fa-search"></i></span>
+        </div>
+        <div id="brandItemCont">
+            <div *ngFor="let bvar of brandVarList" class="variationItems">
+                <div class="selection">
+                    <input type="checkbox"><span class="selectionText">{{bvar.brand}}</span>
+                </div>
+                <span class="variationItemCount">{{bvar.count | currency: " ":"symbol":"1.0"}}</span>
+            </div>
+        </div>
+    </div>
+</div>

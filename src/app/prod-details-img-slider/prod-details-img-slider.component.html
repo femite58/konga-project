@@ -1,0 +1,16 @@
+<div class="centerImg">
+    <div class="slideContainer">
+        <div *ngFor="let image of slideImgList; let i = index;" [style.opacity]="i == current ? '1' : '0'" class="slide">
+            <img [src]="image" class="w-100">
+        </div>
+        <div *ngIf="slideImgList?.length > 1" class="prevCont">
+            <span class="prevControl" (click)="fadeSlide(-1)"><i class="fa fa-angle-left"></i></span>
+        </div>
+        <div *ngIf="slideImgList?.length > 1" class="nextCont">
+            <span class="nextControl" (click)="fadeSlide(1)"><i class="fa fa-angle-right"></i></span>
+        </div>
+    </div>
+    <div *ngIf="slideImgList?.length > 1" class="indicatorCont">
+        <img *ngFor="let indic of slideImgList; let i=index" [src]="indic" [class.active]="i == current" class="indicator" (click)="fadeSlide(i, 'specSlide')">
+    </div>
+</div>

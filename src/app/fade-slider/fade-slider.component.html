@@ -1,0 +1,16 @@
+<div class="slideContainer" #sC (mouseover)="cancelAutoSlide()" (mouseout)="autoSlide()">
+	<div *ngFor="let image of slideImgList; let i = index;" [style.opacity]="i == current ? '1' : '0'" class="slide">
+		<a routerLink="/">
+			<img [src]="image" class="w-100 h-100">
+		</a>
+	</div>
+	<div class="indicatorCont">
+		<span *ngFor="let indic of slideImgList; let i=index" [class.active]="i == current" class="indicator"></span>
+	</div>
+	<div class="prevCont">
+		<span class="prevControl" (click)="fadeSlide(-1)"><i class="fa fa-angle-left"></i></span>
+	</div>
+	<div class="nextCont">
+		<span class="nextControl" (click)="fadeSlide(1)"><i class="fa fa-angle-right"></i></span>
+	</div>
+</div>

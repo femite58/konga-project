@@ -1,0 +1,278 @@
+<div class="desktop">
+    <app-search-header></app-search-header>
+</div>
+<app-menu-bar></app-menu-bar>
+<app-prod-details-bread-crumb [activeLink]="'My Orders'" [previousLink]="'My Account'" [pageTitle]="'Account Orders'"></app-prod-details-bread-crumb>
+<div class="bodyParent">
+    <div class="row">
+        <div class="col-md-3">
+            <app-side-nav [activeLink]="'orders'"></app-side-nav>
+        </div>
+        <div class="col-md-9">
+            <div class="ordersParent">
+                <div class="orderSection desktop">
+                    <div class="orderHead">My Orders</div>
+                    <div class="orderItemCont">
+                        <div *ngFor="let testDate of datedOrders; let i = index;" class="orderItem" [class.selectedOrder]="i === activeOrder" (click)="showDetails(i)">
+                            <div class="itemHead">Order Date: <span>{{'2020-08-19' |date}}</span></div>
+                            <div class="itemBody">
+                                <div class="orderInfo">
+                                    <div class="orderItemDetails">
+                                        <div class="detailItem">
+                                            <b>Total:</b><span><span>N</span>{{292800 |number}}</span>
+                                        </div>
+                                        <div class="detailItem">
+                                            <b>Order No:</b><span>R332287679</span>
+                                        </div>
+                                        <div class="detailItem">
+                                            <b>Payment Method:</b><span>Pay On Collection</span>
+                                        </div>
+                                    </div>
+                                    <div class="deliveryAdderss">
+                                        <b>Delivery Address:</b><br><span>1 REDEMPTION CRESCENT</span>
+                                    </div>
+                                </div>
+                                <div class="itemImages">
+                                    <img src="assets/images/recomprod/1.jpg">
+                                    <img src="assets/images/recomprod/3.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="detailSection desktop">
+                    <div *ngIf="activeOrder < 0" class="noSelTrans">
+                        <div class="svgCont">
+                            <svg height="175" width="255" aria-label="empty-wallet" class="" name="empty-wallet"><g fill="none" fill-rule="evenodd" transform="translate(-6)"><g transform="rotate(-10 130.3 9.13)"><path d="M12.98 57.78l41.98-.04" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="16.18" y="95.56"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><g transform="rotate(11 58.44 901.14)"><path d="M12.98 57.78l40.97-.07m8.93-.24l13.47-.03" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="15.85" y="95.33"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><path d="M106.56 1.57a22 22 0 0 0-22.11 21.5L82.3 115.6a22 22 0 0 0 0 .5 22 22 0 0 0 22 22h61.02a22 22 0 0 0 .51 0 22 22 0 0 0 21.49-22.5l-2.13-92.24a22 22 0 0 0-21.88-21.49l-56.76-.3z" fill="#F2F2F2" stroke="#CECECE" stroke-width="2"></path><path d="M94.77 65.39h54.47" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#E7E3E3" height="19.23" rx="9.62" width="76.92" x="98.28" y="105.77"></rect><path d="M94.76 78.2h26.27" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect height="17.23" rx="8.62" stroke="#979797" stroke-width="2" width="74.92" x="95.44" y="101.64"></rect><ellipse cx="134.18" cy="168.59" fill="#F2F2F2" rx="74.36" ry="6.41"></ellipse></g></svg>
+                        </div>
+                        <div>No Transaction history.</div>
+                        <div>Please select an order.</div>
+                    </div>
+                    <div *ngIf="activeOrder > -1" class="orderDetailedInfo">
+                        <div class="detailHead">
+                            <span (click)="selectedMenu = 'all'" [class.menuSelected]="selectedMenu === 'all'"><span>All</span></span>
+                            <span (click)="selectedMenu = 'processing'" [class.menuSelected]="selectedMenu === 'processing'"><span>Being Processed</span></span>
+                            <span (click)="selectedMenu = 'shipped'" [class.menuSelected]="selectedMenu === 'shipped'"><span>Shipped</span></span>
+                            <span (click)="selectedMenu = 'delivered'" [class.menuSelected]="selectedMenu === 'delivered'"><span>Delivered</span></span>
+                            <span (click)="selectedMenu = 'cancel'" [class.menuSelected]="selectedMenu === 'cancel'"><span>Cancelled</span></span>
+                        </div>
+                        <div class="detailBody">
+                            <div *ngIf="selectedMenu === 'all'" class="all">
+                                <div *ngFor="let test of filterStatus">
+                                    <app-total-detail-item [test]="test"></app-total-detail-item>
+                                </div>
+                            </div>
+                            <div *ngIf="selectedMenu === 'processing'" class="processingSect">
+                                <div *ngIf="filterStatus.length > 0">
+                                    <div *ngFor="let test of filterStatus">
+                                        <app-total-detail-item [test]="test"></app-total-detail-item>
+                                    </div>
+                                </div>
+                                <div *ngIf="filterStatus.length < 1" class="noSelTrans">
+                                    <div class="svgCont">
+                                        <svg height="175" width="255" aria-label="empty-wallet" class="" name="empty-wallet"><g fill="none" fill-rule="evenodd" transform="translate(-6)"><g transform="rotate(-10 130.3 9.13)"><path d="M12.98 57.78l41.98-.04" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="16.18" y="95.56"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><g transform="rotate(11 58.44 901.14)"><path d="M12.98 57.78l40.97-.07m8.93-.24l13.47-.03" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="15.85" y="95.33"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><path d="M106.56 1.57a22 22 0 0 0-22.11 21.5L82.3 115.6a22 22 0 0 0 0 .5 22 22 0 0 0 22 22h61.02a22 22 0 0 0 .51 0 22 22 0 0 0 21.49-22.5l-2.13-92.24a22 22 0 0 0-21.88-21.49l-56.76-.3z" fill="#F2F2F2" stroke="#CECECE" stroke-width="2"></path><path d="M94.77 65.39h54.47" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#E7E3E3" height="19.23" rx="9.62" width="76.92" x="98.28" y="105.77"></rect><path d="M94.76 78.2h26.27" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect height="17.23" rx="8.62" stroke="#979797" stroke-width="2" width="74.92" x="95.44" y="101.64"></rect><ellipse cx="134.18" cy="168.59" fill="#F2F2F2" rx="74.36" ry="6.41"></ellipse></g></svg>
+                                    </div>
+                                    <div>No Transaction history for this filter menu.</div>
+                                    <div>Please change the filter menu or select another order.</div>
+                                </div>
+                            </div>
+                            <div *ngIf="selectedMenu === 'shipped'" class="shippedSec">
+                                <div *ngIf="filterStatus.length > 0">
+                                    <div *ngFor="let test of filterStatus">
+                                        <app-total-detail-item [test]="test"></app-total-detail-item>
+                                    </div>
+                                </div>
+                                <div *ngIf="filterStatus.length < 1" class="noSelTrans">
+                                    <div class="svgCont">
+                                        <svg height="175" width="255" aria-label="empty-wallet" class="" name="empty-wallet"><g fill="none" fill-rule="evenodd" transform="translate(-6)"><g transform="rotate(-10 130.3 9.13)"><path d="M12.98 57.78l41.98-.04" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="16.18" y="95.56"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><g transform="rotate(11 58.44 901.14)"><path d="M12.98 57.78l40.97-.07m8.93-.24l13.47-.03" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="15.85" y="95.33"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><path d="M106.56 1.57a22 22 0 0 0-22.11 21.5L82.3 115.6a22 22 0 0 0 0 .5 22 22 0 0 0 22 22h61.02a22 22 0 0 0 .51 0 22 22 0 0 0 21.49-22.5l-2.13-92.24a22 22 0 0 0-21.88-21.49l-56.76-.3z" fill="#F2F2F2" stroke="#CECECE" stroke-width="2"></path><path d="M94.77 65.39h54.47" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#E7E3E3" height="19.23" rx="9.62" width="76.92" x="98.28" y="105.77"></rect><path d="M94.76 78.2h26.27" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect height="17.23" rx="8.62" stroke="#979797" stroke-width="2" width="74.92" x="95.44" y="101.64"></rect><ellipse cx="134.18" cy="168.59" fill="#F2F2F2" rx="74.36" ry="6.41"></ellipse></g></svg>
+                                    </div>
+                                    <div>No Transaction history for this filter menu.</div>
+                                    <div>Please change the filter menu or select another order.</div>
+                                </div>
+                            </div>
+                            <div *ngIf="selectedMenu === 'delivered'" class="deliveredSec">
+                                <div *ngIf="filterStatus.length > 0">
+                                    <div *ngFor="let test of filterStatus">
+                                        <app-total-detail-item [test]="test"></app-total-detail-item>
+                                    </div>
+                                </div>
+                                <div *ngIf="filterStatus.length < 1" class="noSelTrans">
+                                    <div class="svgCont">
+                                        <svg height="175" width="255" aria-label="empty-wallet" class="" name="empty-wallet"><g fill="none" fill-rule="evenodd" transform="translate(-6)"><g transform="rotate(-10 130.3 9.13)"><path d="M12.98 57.78l41.98-.04" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="16.18" y="95.56"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><g transform="rotate(11 58.44 901.14)"><path d="M12.98 57.78l40.97-.07m8.93-.24l13.47-.03" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="15.85" y="95.33"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><path d="M106.56 1.57a22 22 0 0 0-22.11 21.5L82.3 115.6a22 22 0 0 0 0 .5 22 22 0 0 0 22 22h61.02a22 22 0 0 0 .51 0 22 22 0 0 0 21.49-22.5l-2.13-92.24a22 22 0 0 0-21.88-21.49l-56.76-.3z" fill="#F2F2F2" stroke="#CECECE" stroke-width="2"></path><path d="M94.77 65.39h54.47" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#E7E3E3" height="19.23" rx="9.62" width="76.92" x="98.28" y="105.77"></rect><path d="M94.76 78.2h26.27" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect height="17.23" rx="8.62" stroke="#979797" stroke-width="2" width="74.92" x="95.44" y="101.64"></rect><ellipse cx="134.18" cy="168.59" fill="#F2F2F2" rx="74.36" ry="6.41"></ellipse></g></svg>
+                                    </div>
+                                    <div>No Transaction history for this filter menu.</div>
+                                    <div>Please change the filter menu or select another order.</div>
+                                </div>
+                            </div>
+                            <div *ngIf="selectedMenu === 'cancel'" class="cancelledSec">
+                                <div *ngIf="filterStatus.length > 0">
+                                    <div *ngFor="let test of filterStatus">
+                                        <app-total-detail-item [test]="test"></app-total-detail-item>
+                                    </div>
+                                </div>
+                                <div *ngIf="filterStatus.length < 1" class="noSelTrans">
+                                    <div class="svgCont">
+                                        <svg height="175" width="255" aria-label="empty-wallet" class="" name="empty-wallet"><g fill="none" fill-rule="evenodd" transform="translate(-6)"><g transform="rotate(-10 130.3 9.13)"><path d="M12.98 57.78l41.98-.04" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="16.18" y="95.56"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><g transform="rotate(11 58.44 901.14)"><path d="M12.98 57.78l40.97-.07m8.93-.24l13.47-.03" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="15.85" y="95.33"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><path d="M106.56 1.57a22 22 0 0 0-22.11 21.5L82.3 115.6a22 22 0 0 0 0 .5 22 22 0 0 0 22 22h61.02a22 22 0 0 0 .51 0 22 22 0 0 0 21.49-22.5l-2.13-92.24a22 22 0 0 0-21.88-21.49l-56.76-.3z" fill="#F2F2F2" stroke="#CECECE" stroke-width="2"></path><path d="M94.77 65.39h54.47" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#E7E3E3" height="19.23" rx="9.62" width="76.92" x="98.28" y="105.77"></rect><path d="M94.76 78.2h26.27" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect height="17.23" rx="8.62" stroke="#979797" stroke-width="2" width="74.92" x="95.44" y="101.64"></rect><ellipse cx="134.18" cy="168.59" fill="#F2F2F2" rx="74.36" ry="6.41"></ellipse></g></svg>
+                                    </div>
+                                    <div>No Transaction history for this filter menu.</div>
+                                    <div>Please change the filter menu or select another order.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile">
+                    <div *ngIf="mobilePage === 1 && !filterPage" class="mobileOrderSection">
+                        <div *ngFor="let testDate of datedOrders; let i=index" class="datedOrderItem" (click)="showDetails(i)">
+                            <div class="datedItemHead">
+                                <b>Order Date: <span>{{'2020-08-19' |date}}</span></b>
+                                <span>View Order</span>
+                            </div>
+                            <div class="datedItemInfo">
+                                <div>
+                                    <b>Total:</b>
+                                    <span><span>N</span>{{292800 |number}}</span>
+                                </div>
+                                <div>
+                                    <b>Order No:</b>
+                                    <span>R332287679</span>
+                                </div>
+                            </div>
+                            <div class="datedItemImg">
+                                <img src="assets/images/recomprod/1.jpg">
+                                <img src="assets/images/recomprod/3.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="mobilePage === 2 && !filterPage" class="datedOrderDetails">
+                        <div (click)="backAction()" class="backAction">
+                            <div>
+                                <i class="fa fa-arrow-left"></i>
+                                <b>Back to Orders</b>
+                            </div>
+                            <span (click)="filterPage = true">Filter Orders</span>
+                        </div>
+                        <div *ngIf="mobileFilter.length < 1" class="noSelTrans">
+                            <div class="svgCont">
+                                <svg height="175" width="255" aria-label="empty-wallet" class="" name="empty-wallet"><g fill="none" fill-rule="evenodd" transform="translate(-6)"><g transform="rotate(-10 130.3 9.13)"><path d="M12.98 57.78l41.98-.04" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="16.18" y="95.56"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><g transform="rotate(11 58.44 901.14)"><path d="M12.98 57.78l40.97-.07m8.93-.24l13.47-.03" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#D8D8D8" height="17.35" rx="8.68" width="68.11" x="15.85" y="95.33"></rect><path d="M12.99 69.12h24.1" stroke="#CECECE" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M25.73 1.09a22 22 0 0 0-22.11 21.5l-1.78 78.09a22 22 0 0 0 0 .5 22 22 0 0 0 22 22H72.8a22 22 0 0 0 21.5-22.5l-1.78-77.86a22 22 0 0 0-21.87-21.5L25.73 1.1z" stroke="#CECECE" stroke-width="2"></path><rect height="15.35" rx="7.68" stroke="#BFBFBF" stroke-width="2" width="66.11" x="13.69" y="91.14"></rect></g><path d="M106.56 1.57a22 22 0 0 0-22.11 21.5L82.3 115.6a22 22 0 0 0 0 .5 22 22 0 0 0 22 22h61.02a22 22 0 0 0 .51 0 22 22 0 0 0 21.49-22.5l-2.13-92.24a22 22 0 0 0-21.88-21.49l-56.76-.3z" fill="#F2F2F2" stroke="#CECECE" stroke-width="2"></path><path d="M94.77 65.39h54.47" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="#E7E3E3" height="19.23" rx="9.62" width="76.92" x="98.28" y="105.77"></rect><path d="M94.76 78.2h26.27" stroke="#979797" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect height="17.23" rx="8.62" stroke="#979797" stroke-width="2" width="74.92" x="95.44" y="101.64"></rect><ellipse cx="134.18" cy="168.59" fill="#F2F2F2" rx="74.36" ry="6.41"></ellipse></g></svg>
+                            </div>
+                            <div>No Transaction history for this filter.</div>
+                            <div>Please change filter or select a different order.</div>
+                        </div>
+                        <div *ngIf="mobileFilter.length > 0">
+                            <div class="filterDetailSec">
+                                <div class="filterHead">
+                                    <div>
+                                        <b>Order Date:</b>
+                                        <span>{{'2020-08-19' |date}}</span>
+                                    </div>
+
+                                </div>
+                                <div class="detailSecItem">
+                                    <div><b>Delivery Address</b></div>
+                                    <div>1 REDEMPTION CRESCENT</div>
+                                </div>
+                                <div class="detailSecItem">
+                                    <div><b>Payment Method</b></div>
+                                    <div>Pay On Collection</div>
+                                </div>
+                            </div>
+                            <div *ngFor="let test of mobileFilter; let i = index" class="datedOrderDetailItem">
+                                <div class="itemStatusHead">
+                                    <b>Status:</b>
+                                    <span [class.shipped]="test.status == 'shipped'" [class.processing]="test.status == 'processing'">{{test.status == 'shipped' ? 'Shipped' : 'Processing'}}</span>
+                                </div>
+                                <a routerLink="/" class="orderProductInfo">
+                                    <div class="imgCont">
+                                        <img class="w-100" src="assets/images/recomprod/1.jpg">
+                                    </div>
+                                    <div class="prodInfoText">
+                                        <div class="prodName">Notebook 15-RB006NIA AMD A4 Dual Core - 4GB RAM, 500GB HDD - FreeDos</div>
+                                        <div class="price"><span>N</span>{{91900 |number}}</div>
+                                        <div>Quantity: {{1}}</div>
+                                    </div>
+                                </a>
+                                <div class="viewOrderSummary">
+                                    <span (click)="showSummaryPage(itemIndices[i])">View Order Summary</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="filterPage" class="filterSection">
+                        <div class="filterSecHead">
+                            <div (click)="backAction()">
+                                <i class="fa fa-arrow-left"></i>
+                                <span>Filter</span>
+                            </div>
+                            <span (click)="filterPage = false">Apply Filter</span>
+                        </div>
+                        <div class="filterSecBody">
+                            <div><b>Filter Orders</b></div>
+                            <form>
+                                <div class="filterOptions">
+                                    <input id="all" type="radio" name="option" [checked]="selectedMenu === 'all'">
+                                    <label (click)="selectedMenu = 'all'" for="all">All</label>
+                                </div>
+                                <div class="filterOptions">
+                                    <input id="processed" type="radio" name="option" [checked]="selectedMenu === 'processed'">
+                                    <label (click)="selectedMenu = 'processing'" for="processed">Being Processed</label>
+                                </div>
+                                <div class="filterOptions">
+                                    <input id="shipped" type="radio" name="option" [checked]="selectedMenu === 'shipped'">
+                                    <label (click)="selectedMenu = 'shipped'" for="shipped">Shipped</label>
+                                </div>
+                                <div class="filterOptions">
+                                    <input id="delivered" type="radio" name="option" [checked]="selectedMenu === 'delivered'">
+                                    <label (click)="selectedMenu = 'delivered'" for="delivered">Delivered</label>
+                                </div>
+                                <div class="filterOptions">
+                                    <input id="cancel" type="radio" name="option" [checked]="selectedMenu === 'cancel'">
+                                    <label (click)="selectedMenu = 'cancel'" for="cancel">Cancelled</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- The orderSummary property should be used to generate the order summary page -->
+                    <div *ngIf="mobilePage === 3 && !filterPage" class="orderSummaryCont">
+                        <div (click)="backAction()" class="backAction">
+                            <div>
+                                <i class="fa fa-arrow-left"></i>
+                                <b>Back to Order Details</b>
+                            </div>
+                        </div>
+                        <div class="orderSummaryBody">
+                            <div class="summaryItem">
+                                <span>Total</span>
+                                <span><span>N</span>{{200450 |number}}</span>
+                            </div>
+                            <div class="orderNo">Order No: R3333839399</div>
+                            <div class="summaryItem">
+                                <span>Order Date:</span>
+                                <span>{{'2020-08-19' |date}}</span>
+                            </div>
+                            <div class="summaryItem">
+                                <span>Shipping Fee</span>
+                                <span><span>N</span>{{450 |number}}</span>
+                            </div>
+                            <div class="summaryItem">
+                                <span>Payment Method</span>
+                                <span>Pay On Collection</span>
+                            </div>
+                            <div class="summaryItem">
+                                <span>Delivery Address</span>
+                                <b>Pay On Collection</b>
+                                <b>1 REDEMPTION CRESCENT, GBAGADA Lagos, NG</b>
+                            </div>
+                            <div class="summaryItem">
+                                <span>Estimated Delivery Date</span>
+                                <b>Arriving Between</b>
+                                <b>19 Aug 2020 - 4 Sep 2020</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

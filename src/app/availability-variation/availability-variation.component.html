@@ -1,0 +1,14 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Item Availability</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="avVarContainer" class="variationItemsCont" [style.height.px]="opened ? totalCollapseH : '0'">
+        <div *ngFor="let avar of avVarList" class="variationItems">
+            <div class="selection">
+                <input type="checkbox"><span class="selectionText">{{avar.location}}</span>
+            </div>
+            <span class="variationItemCount">{{avar.count | currency: " ":"symbol":"1.0"}}</span>
+        </div>
+    </div>
+</div>

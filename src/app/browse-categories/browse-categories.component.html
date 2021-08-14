@@ -1,0 +1,9 @@
+<div class="variationCont">
+    <div class="variationHeadingCont" (click)="opened = !opened">
+        <h3>Browse Categories</h3>
+        <span [class.accInactive]="!opened">{{opened ? '—' : '+'}}</span>
+    </div>
+    <div id="browseCatCont" class="variationItemsCont" [style.height.px]="opened ? browseContH : 0">
+        <a *ngFor="let cat of menulist[0].subMenus" routerLink="/" class="catItem">{{cat.title}}</a>
+    </div>
+</div>

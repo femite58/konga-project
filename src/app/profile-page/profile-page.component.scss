@@ -1,0 +1,67 @@
+@import '../theme/colors.scss';
+.bodyParent {
+    padding: 30px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.sideNav {
+    background: #fff;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+.navSection {
+    margin: 20px 10px;
+    min-height: 100px;
+    border-bottom: 1px solid #e7e7e7;
+    display: flex;
+}
+
+.sideNav .navSection:last-child {
+    border: none;
+}
+
+.iconCont {
+    margin: -3px 15px 0 10px;
+}
+
+.iconCont i {
+    font-size: 20px;
+}
+
+.navText h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.navText a {
+    font-size: 13px;
+    margin-bottom: 11px;
+    display: block;
+    color: #4a4a4a;
+}
+
+.navText .activeLink {
+    color: $secondary;
+    font-weight: bold;
+}
+
+.navText .navLinks {
+    margin-top: 15px;
+}
+
+@media (max-width: 767px) {
+    .desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .bodyParent {
+        padding: 20px 10px;
+    }
+}
